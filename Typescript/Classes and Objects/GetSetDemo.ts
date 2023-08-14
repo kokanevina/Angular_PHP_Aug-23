@@ -47,3 +47,6 @@ console.log(account1.accnumber); // get prperty
 account1.balance=45000; // set property
 
 account1.accnumber=87988798; // set property
+
+
+let referece=account1;   // just a reference to existing object
