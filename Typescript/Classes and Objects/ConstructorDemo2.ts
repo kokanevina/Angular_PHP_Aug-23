@@ -4,12 +4,12 @@ class BankAccount{
     holderId:number;
     accountBalance:number;
     accountType:string;
-    constructor(){
-        console.log("***in constructor***");   
-        this.accountNum=11112222;
-        this.holderId=101020;
-        this.accountBalance=1000;
-        this.accountType="savings";
+    constructor(accnum:number,holderId:number,balance:number,accountType:string){
+        console.log("***in p constructor***");   
+        this.accountNum=accnum;
+        this.holderId=holderId;
+        this.accountBalance=balance;
+        this.accountType=accountType;
     }
     /*Multiple constructor implementations are not allowed. */
     
@@ -24,9 +24,9 @@ class BankAccount{
     }
 }
 
-let account1= new BankAccount();  // call goes to constructor
+let account1= new BankAccount(23242526,121212,5000,"savings");  // call goes to constructor
 console.log(account1.getDetails()); 
-let account2= new BankAccount();   // call goes to constructor
+let account2= new BankAccount(45464748,323232,10000,"savings");   // call goes to constructor
 console.log(account2.getDetails());
 account1.deposit(3000);
 console.log(account1.accountBalance);   
