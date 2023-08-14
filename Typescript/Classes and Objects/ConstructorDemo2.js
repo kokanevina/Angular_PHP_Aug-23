@@ -1,5 +1,16 @@
 var BankAccount = /** @class */ (function () {
+    /* constructor(accnum:number,holderId:number,balance:number,accountType:string){
+        console.log("***in p constructor***");
+        this.accountNum=accnum;
+        this.holderId=holderId;
+        this.accountBalance=balance;
+        this.accountType=accountType;
+    } */
     function BankAccount(accnum, holderId, balance, accountType) {
+        if (accnum === void 0) { accnum = 0; }
+        if (holderId === void 0) { holderId = 0; }
+        if (balance === void 0) { balance = 0; }
+        if (accountType === void 0) { accountType = "current"; }
         console.log("***in p constructor***");
         this.accountNum = accnum;
         this.holderId = holderId;
@@ -24,3 +35,5 @@ console.log(account1.accountBalance);
 console.log(account2.accountBalance);
 console.log(account1.getDetails());
 console.log(account2.getDetails());
+var account3 = new BankAccount(98989898, 666666);
+console.log(account3.getDetails());
