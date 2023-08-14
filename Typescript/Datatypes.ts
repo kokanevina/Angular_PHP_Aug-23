@@ -62,10 +62,7 @@ loc="turbhe";
 
 
 let age=78
-let gender
-gender="female"// string
+let gender="female"// string
 console.log(typeof gender)
-gender=1// number
-console.log(typeof gender)
-
 let nation; nation="India";
+let len=(<string>nation).length   // type assertion
