@@ -50,11 +50,11 @@ class BankAccount{
         type: ${this.accountType}`; 
     }
 
-    getBankName(){
+    getBankName():string{
         // instance method can access static variable? : yes (classname.variablename)
         return BankAccount.bankName;
     }
-    static getBank(){
+    static getBank():string{
         // static method can access static variable? yes (classname.variablename) / (this.bankName)
         return BankAccount.bankName;
     }
