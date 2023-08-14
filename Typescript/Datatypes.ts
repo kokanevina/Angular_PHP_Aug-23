@@ -4,7 +4,7 @@ var str;
 let s1;
 const s2=45;
  //s2=67;   //Cannot assign to 's2' because it is a constant.
-
+// difference
 /*Dynamically Typed Language      Statically Typed Lang
       var b;                             int a; float b;  a="hello":error
       b="hi"; string
