@@ -2,6 +2,7 @@ var str;
 var s1;
 var s2 = 45;
 //s2=67;   //Cannot assign to 's2' because it is a constant.
+// difference
 /*Dynamically Typed Language      Statically Typed Lang
       var b;                             int a; float b;  a="hello":error
       b="hi"; string
@@ -23,3 +24,24 @@ companyName = {
     name: "neo",
     code: '456788'
 };
+// var and let diff
+// var type variables are functional scoped variables
+function test1() {
+    for (var i = 1, myName = "Vina"; i <= 5; i++) // declared i in for loop
+     {
+        console.log("inside for loop:" + i);
+    }
+    console.log("outside for loop" + i); // used if out of for loop  
+    console.log("My name is :" + myName);
+}
+test1();
+// let type variables are block scoped variables
+function test2() {
+    for (var i = 1, myName = "Vina"; i <= 5; i++) // declared i in for loop
+     {
+        console.log("inside for loop:" + i);
+    } // scope of i and myName is ended here
+    // console.log("outside for loop"+i);  // used if out of for loop  
+    //  console.log("My name is :"+myName);
+}
+test2();
