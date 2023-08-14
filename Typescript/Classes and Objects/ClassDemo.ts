@@ -18,7 +18,12 @@ class BankAccount{
         this.accountBalance=this.accountBalance+amount;
     }
     getDetails():string  {
-        return "account number:"+this.accountNum+"\naccount holder id:"+this.holderId+"\nbalance:"+this.accountBalance+"\ntype :"+this.accountType;
+       // return "account number:"+this.accountNum+"\naccount holder id:"+this.holderId+"\nbalance:"+this.accountBalance+"\ntype :"+this.accountType;
+   
+        return `account number : ${this.accountNum}
+        accouner holder : ${this.holderId} 
+        balance : ${this.accountBalance}
+        type: ${this.accountType}`
     }
 }
 

@@ -13,7 +13,8 @@ var BankAccount = /** @class */ (function () {
         this.accountBalance = this.accountBalance + amount;
     };
     BankAccount.prototype.getDetails = function () {
-        return "account number:" + this.accountNum + "\naccount holder id:" + this.holderId + "\nbalance:" + this.accountBalance + "\ntype :" + this.accountType;
+        // return "account number:"+this.accountNum+"\naccount holder id:"+this.holderId+"\nbalance:"+this.accountBalance+"\ntype :"+this.accountType;
+        return "account number : ".concat(this.accountNum, "\n        accouner holder : ").concat(this.holderId, " \n        balance : ").concat(this.accountBalance, "\n        type: ").concat(this.accountType);
     };
     return BankAccount;
 }());
