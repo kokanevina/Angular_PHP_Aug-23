@@ -35,9 +35,7 @@ function test1(){
     for (var i=1,myName="Vina";i<=5;i++)  // declared i in for loop
         {
             console.log("inside for loop:"+i); 
-            /* let bele=document.createElement("b");
-            bele.textContent=i+"";
-            document.body.append(bele); */
+
         }
      console.log("outside for loop:"+i);  // used if out of for loop  
      console.log("My name is :"+myName);
@@ -53,3 +51,21 @@ function test2(){
    //  console.log("My name is :"+myName);
 }
 test2();
+
+var city="Rabale";
+city="Dadar";
+var city="Thane";  // redeclarations are allowed
+
+let loc="Sanpada";
+loc="turbhe";
+//let loc="Ghansoli"; //Cannot redeclare block-scoped variable
+
+
+let age=78
+let gender
+gender="female"// string
+console.log(typeof gender)
+gender=1// number
+console.log(typeof gender)
+
+let nation; nation="India";
