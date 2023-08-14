@@ -58,6 +58,10 @@ class BankAccount{
         // static method can access static variable? yes (classname.variablename) / (this.bankName)
         return BankAccount.bankName;
     }
+    static test(account:BankAccount){
+       // console.log(this.accountNum); // not allowed
+        console.log(account.accountNum); // allowed
+    }
 
 }// scope of private properties is within class
 
@@ -66,6 +70,8 @@ console.log(BankAccount.bankName);  // no need of object // its a class property
 console.log(BankAccount.bankName);
 let account1=new BankAccount(45454545,444444,23000,"savings");
 let account2=new BankAccount(34343434,333333,23000,"savings");
+account1.getDetails();
+account2.getDetails();
 account1.atype="current";
 console.log("Bank Name : "+account1.getBankName());
 BankAccount.bankName="Standard C";
@@ -75,3 +81,6 @@ console.log("Bank Name : "+account2.getBankName());
 console.log(account1.atype);
 console.log(account2.atype);
 console.log(BankAccount.getBank());
+
+BankAccount.test(account1);
+BankAccount.test(account2);
