@@ -1,0 +1,5 @@
+1. Implement any example to show use of DOM methods to add, remove, list elements from DOM tree
+2. Create checkboxes to take interested courses input from user. When user checks the checkboxes, the values should be added in array and array should be displayed in table format on HTML page.
+3. Implement simple Image slide show using setInterval
+
+

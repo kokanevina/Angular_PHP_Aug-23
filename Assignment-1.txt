@@ -1,0 +1,7 @@
+
+Declare any array and iterate using normal for, for of loop and forEach method
+1. number array
+2. string array
+3. any object array (e.g. Book, Employee)
+
+

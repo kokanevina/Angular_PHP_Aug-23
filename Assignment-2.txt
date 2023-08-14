@@ -1,0 +1,19 @@
+Implement below logic using filter method with arrow function.
+
+
+let names =['Hari','Pari','Krishna','Sai','Subodh','Suman','santosh','Kishori'];
+
+1. Filter the names ending with 'ri'
+
+2. Filter the names ending withn 'i'
+
+3. Filter the names starting with 'S' (ignore case),     
+()
+4. Filter the names starting with 'su' (Ignore case)
+
+let snames= ['Rupa','    rupa', 'rupa   ','RUPA','RUPALI' ]; 
+
+Filter the array having name Rupa (ignore case)
+
+
+

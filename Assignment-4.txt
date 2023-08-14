@@ -1,0 +1,8 @@
+Declare Salary array
+
+1. Make sum of array elements using reduce method. 
+2. Make sum of array elements using reduce method but sum initial value = 1000
+3. Add 3000 in every salary of array using map method. Display original salaries and increased salaries
+4. Display first matching salary which is greater than 50000  
+5. Display all matching salaries which are greater than 50000  
+
