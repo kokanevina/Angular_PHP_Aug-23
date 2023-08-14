@@ -29,13 +29,15 @@ companyName={     // object
     name:"neo",
     code:'456788'
 }
-
 // var and let diff
 // var type variables are functional scoped variables
 function test1(){
     for (var i=1,myName="Vina";i<=5;i++)  // declared i in for loop
         {
             console.log("inside for loop:"+i); 
+            /* let bele=document.createElement("b");
+            bele.textContent=i+"";
+            document.body.append(bele); */
         }
      console.log("outside for loop:"+i);  // used if out of for loop  
      console.log("My name is :"+myName);
@@ -50,5 +52,4 @@ function test2(){
     // console.log("outside for loop"+i);  // used if out of for loop  
    //  console.log("My name is :"+myName);
 }
-
 test2();
