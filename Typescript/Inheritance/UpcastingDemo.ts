@@ -33,11 +33,6 @@ animal=new Sheep();
 animal.eat(); // overriden version
 
 
-
-
-
-
-
 let tiger=new Tiger();
 callEat(tiger);
 let sheep=new Sheep();
