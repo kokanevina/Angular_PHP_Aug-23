@@ -19,7 +19,6 @@ class Trainer extends Employee{
         return `${super.getDetails()}  Specialized Tech: ${this.specializedTech}`
     }
 }
-
 class InhouseTrainer extends Trainer{
     variablePay: number;
     extraWorkingHrs:number;
@@ -35,7 +34,6 @@ class InhouseTrainer extends Trainer{
        return this.empNetSalary+(this.variablePay*this.extraWorkingHrs);
     }
 }
-
 class VistingTrainer extends Trainer{
     trainingHrs:number;
     pay:number;
@@ -68,5 +66,7 @@ inhouseTrainer.extraWorkingHrs=30;
 let netSalary2=inhouseTrainer.getSalary(); // overriding
 console.log("Net Salary of Trainer:"+netSalary2);
 
+// overriding : dynamic polymorphism
 
-// visting trainer
+
+
