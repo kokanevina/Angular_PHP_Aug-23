@@ -23,4 +23,11 @@ let city=myMap.get(1111);
 console.log(`employee 1111 is living in city ${city}`);
 
 console.log(myMap);
-// iteraration via entries
+let mapEntry=myMap.entries();
+while(true){
+    let nextEntry=mapEntry.next();
+    if(nextEntry.done==true)
+        break;
+    console.log(nextEntry.value);   
+}
+
