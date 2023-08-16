@@ -1,8 +1,10 @@
-Create Generic Array of strings/numbers
+1. Create Generic Array of strings/numbers
 
 Implement multiple array functions on this array
 
-Create Generic Array of Book (class Book must be available)
+Implement splice to delete elements from inbetween of array 
+
+2. Create Generic Array of Book (class Book must be available)
 add multiple books in this array
 
 let book1=new Book(45,"Learn Java",678.00)
@@ -11,7 +13,9 @@ let book3=new Book(47,"Basics of Java",670.00)
 let book4=new Book(33,"Web Basics",678.00)
 let book5=new Book(33,"Advanced Java in Easy way",678.00);
 
-// 1. Display array using forEach
-//2. Filter Java Books (Learn Java, Basics of Java, Advanced Java in Easy way)
-//3. Increment price of every book by 100 but save these books in new array
-// 4. Make sum of prices of all books
+1. Display array using forEach
+2. Filter Java Books (Learn Java, Basics of Java, Advanced Java in Easy way)
+3. Increment price of every book by 100 but save these books in new array
+4. Make sum of prices of all books
+
+Mark DONE in front of ur name in Attendance sheet  by tomorrow(17-Aug) 6 pm. Trainer will check assignments from to 6 to 7 pm  
