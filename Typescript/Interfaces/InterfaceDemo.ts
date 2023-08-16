@@ -4,7 +4,6 @@ interface EmployeeIntf{
     ta?:number;
     getTA?():number;
 }
-
 // class must override the methods declared in the interfaces
 class NeoEmployee implements EmployeeIntf{
     salary:number;
@@ -16,15 +15,14 @@ class NeoEmployee implements EmployeeIntf{
         return 0;
     }
 }
-
 class SquadEmployee implements EmployeeIntf{
     salary:number;
     getSalary():number{
         return this.salary+345+2222;
     }   
 }
-
 let emp:EmployeeIntf;
 emp=new NeoEmployee();
-
+emp.salary=56;
 emp=new SquadEmployee();
+emp.salary=12;
