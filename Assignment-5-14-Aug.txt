@@ -1,0 +1,10 @@
+Create Trainer class with instance variables
+Create Student Class with instance variables
+
+in Trainer class there should be addStudent method which will accept Student object as parameter and
+should add that object in Student type array (means for 1 trainer we are assigning many students)
+
+in Trainer class there should be getStudents method which will return Student array (means for that trainer which students are assigned that to be displayed)
+
+Test whether both methods are working or not
+
