@@ -10,8 +10,10 @@ class Animal{
 class Tiger extends Animal{
     b:string
     constructor(){
-        super();  // explicit
         console.log("***in Tiger constructor***");     
+        super();  // explicit
+        this.b="hi";
+      
     }
     eat(){  // inherited overriden method
         console.log("Tiger eats other small animals");     
