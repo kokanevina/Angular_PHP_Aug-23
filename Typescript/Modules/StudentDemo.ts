@@ -8,3 +8,5 @@ changeCollege("SIT");
 console.log(collegeName);
 
 let dept1=new Department();
+
+

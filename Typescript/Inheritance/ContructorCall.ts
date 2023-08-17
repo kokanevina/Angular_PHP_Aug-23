@@ -1,3 +1,4 @@
+
 class Animal{
     a:string
     constructor(){
