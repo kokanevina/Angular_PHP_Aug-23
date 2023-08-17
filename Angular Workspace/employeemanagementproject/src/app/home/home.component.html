@@ -1,0 +1,16 @@
+<h3>2-Way Data Binding</h3>
+
+
+<div>
+    <label for="ename">Enter Employee Name:</label>
+    <input type="text"  id="ename" [(ngModel)]="empName" (keyup)="test()" />
+    <p>
+        {{empName}}
+    </p>
+</div>
+<!--
+    {{}} : string interpolation (1-way db)
+    [()] : 2-way data binding
+    () : event binding, attribute binding
+    
+-->
