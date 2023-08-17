@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+   projectTitle="Employee Management System";
 
+   constructor(){
+    setTimeout(() => {
+      this.projectTitle="EMPLOYEE CRUD MODEL"
+      console.log(this.projectTitle);   
+    }, 6000);
+    
+   }
 }
