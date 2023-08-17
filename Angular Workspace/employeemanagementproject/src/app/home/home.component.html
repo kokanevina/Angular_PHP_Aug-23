@@ -3,10 +3,22 @@
 
 <div>
     <label for="ename">Enter Employee Name:</label>
-    <input type="text"  id="ename" [(ngModel)]="empName" (keyup)="test()" />
+    <input type="text"  id="ename" [(ngModel)]="empName" (keyup)="test($event)" />
     <p>
         {{empName}}
     </p>
+    <label for="test">Event Testing</label>
+    <input type="text" id="test" (blur)="test2()">
+</div>
+<div>
+    <label for="number1">Enter 1st Number </label>
+    <input type="number" id="number1" [(ngModel)]="num1"><br/>
+    <label for="number2">Enter 2nd Number </label>
+    <input type="number" id="number2" [(ngModel)]="num2"><br/>
+    <button (click)="add()">ADD NUMBERS</button>
+    <div>
+        <b>ADDTION IS : {{addition}}</b>
+    </div>
 </div>
 <!--
     {{}} : string interpolation (1-way db)
@@ -14,3 +26,4 @@
     () : event binding, attribute binding
     
 -->
+<!-- focus, blur, submit, click-->

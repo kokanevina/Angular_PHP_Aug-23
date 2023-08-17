@@ -7,14 +7,25 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   empName="BBB";
-
+  num1=0;
+  num2=0;
+  addition=0;
+ 
   constructor(){
     setTimeout(() => {
       this.empName="Vina"
     }, 3000);
   }
 
-  test():void{
+  test(eventObj:any):void{
    console.log(this.empName);
+   console.log(eventObj);
+  }
+  test2():void{
+    console.log("Event Generated");
+    
+  }
+  add():void{
+      this.addition=this.num1+this.num2;
   }
 }
