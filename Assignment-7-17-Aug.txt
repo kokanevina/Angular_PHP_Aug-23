@@ -1,0 +1,3 @@
+
+ Project Name : Entity Management (Choose any entity)
+Create Header Component, Footer Component, Navbar component in ur project. Design with bootstrap
