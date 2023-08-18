@@ -67,13 +67,13 @@
 
     <div>
         <h3>VOTER APPLICATION</h3>
-        <label for="age2">Enter your age: </label><input type="number" id="age2" [(ngModel)]="age">
+        <label for="age4">Enter your age: </label><input type="number" id="age4" [(ngModel)]="age">
         <h4>Your age is : {{age}}</h4>
         <p *ngIf="age<18;else voterelseblock" class="text-danger">   <!-- when if conditions bcms true then the element gets added, if false then element gets removed-->
             <b>Your are not allowed for voting</b>
         </p>
         <ng-template #voterelseblock>
-            <p class="text-info"> <!-- when if condition bcms true then the element gets added, if false then element gets removed-->
+            <p class="text-info"> 
                 <b>Your age is valid for voting. Please proceed with the age proof</b>
             </p>
         </ng-template>
@@ -87,7 +87,7 @@
             <b>Your are not allowed for voting</b>
         </p>
         <ng-template #voterelseblock2>
-            <div class="text-info"> <!-- when if condition bcms true then the element gets added, if false then element gets removed-->
+            <div class="text-info"> 
                 <b>Your age {{age}} is valid for voting. Please proceed with the age proof</b>
 
                 <div *ngIf="age>=18 && age<=35">
@@ -102,7 +102,24 @@
             </div>
         </ng-template>
     </div>
-
+<hr>
+<div>
+    <h3>VOTER APPLICATION (If then else )</h3>
+    <label for="age5">Enter your age: </label><input type="number" id="age5" [(ngModel)]="age">
+    <h4>Your age is : {{age}}</h4>
+    <i *ngIf="age<18 then voterthenblock; else voterelsepart" class="text-danger"> 
+    </i> <!-- span element is only used to check the condn, so it will not be a part of DOM-->
+    <ng-template #voterthenblock>
+        <p>
+            <b>Your are not allowed for voting</b>
+        </p>
+    </ng-template>
+    <ng-template #voterelsepart>
+        <p class="text-info"> 
+            <b>Your age is valid for voting. Please proceed with the age proof</b>
+        </p>
+    </ng-template>
+</div>
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding
