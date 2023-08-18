@@ -1,7 +1,6 @@
 <h3>2-Way Data Binding</h3>
 
-
-<div>
+<div [ngStyle]="{backgroundColor: bcolor, color: fcolor}">
     <label for="ename">Enter Employee Name:</label>
     <input type="text"  id="ename" [(ngModel)]="empName" (keyup)="test($event)" />
     <p>
@@ -180,6 +179,7 @@
         <p *ngSwitchDefault>INVALID NUMBER</p>
     </div>
 </div>
+
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding

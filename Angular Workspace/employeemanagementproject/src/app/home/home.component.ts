@@ -14,6 +14,7 @@ export class HomeComponent {
   addition2=0;
   age=0;
   salaryArray=[56000,78000,34000,67000,78000,55000,67000];
+  
   contacts=[
     {
       name:"kiran",
@@ -26,13 +27,31 @@ export class HomeComponent {
     {
       name:"pooja",
       contact: [888888888,9898989898]
-    },
+    }
 ]
 
+  bcolor='aqua';
+  fcolor='blue';
+  colorarindex=0;
+  colorArray=[{back:'green',fore:'yellow',},{back:'red',fore:'white',},{back:'blue',fore:'hotpink'}]
   constructor(){
     setTimeout(() => {
       this.empName="Vina"
     }, 3000);
+
+    setInterval(()=>{
+        this.changeColor();
+    },500)
+  }
+
+  changeColor(){
+    console.log("in function");
+      let colorObj=this.colorArray[this.colorarindex];
+      this.bcolor=colorObj.back;
+      this.fcolor=colorObj.fore;
+      this.colorarindex++;
+      if(this.colorarindex==this.colorArray.length)
+        this.colorarindex=0;
   }
 
   test(eventObj:any):void{
