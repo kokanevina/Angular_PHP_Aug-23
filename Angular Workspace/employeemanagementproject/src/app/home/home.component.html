@@ -166,10 +166,24 @@
         </td>
     </tr>
 </table>
+<hr>
+<div>
+    <h3>Switch case</h3>
+    <label for="num">Enter number:</label>
+    <input type="text"  id="num" [(ngModel)]="num"/>
+    <p>
+      <b>Number is :  {{num}}</b> 
+    </p>
+    <div [ngSwitch]="true" class="text-info">  
+        <p *ngSwitchCase="num>=0 && num%2==0">NUMBER IS EVEN</p>
+        <p *ngSwitchCase="num>=0 && num%2!=0">NUMBER IS ODD</p>
+        <p *ngSwitchDefault>INVALID NUMBER</p>
+    </div>
+</div>
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding
-    () : event binding, attribute binding
+    () : event binding
     [] : attribute binding
     
 -->

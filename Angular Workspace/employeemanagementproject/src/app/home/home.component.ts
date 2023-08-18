@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   empName="BBB";
+  num=0;
   num1=0;
   num2=0;
   addition=0;
@@ -57,4 +58,5 @@ export class HomeComponent {
     this.addition2=parseFloat(n1)+parseFloat(n2);
     
   }
+
 }
