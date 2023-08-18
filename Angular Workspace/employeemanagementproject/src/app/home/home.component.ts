@@ -13,7 +13,21 @@ export class HomeComponent {
   addition2=0;
   age=0;
   salaryArray=[56000,78000,34000,67000,78000,55000,67000];
- 
+  contacts=[
+    {
+      name:"kiran",
+      contact: [7878989845,9090909090]
+    },
+    {
+      name:"priti",
+      contact: [8080808080,7676767676,7070707070]
+    },
+    {
+      name:"pooja",
+      contact: [888888888,9898989898]
+    },
+]
+
   constructor(){
     setTimeout(() => {
       this.empName="Vina"

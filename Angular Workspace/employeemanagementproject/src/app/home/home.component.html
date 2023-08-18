@@ -151,10 +151,21 @@
         <span *ngIf="o">{{salary}}</span>
     </p>
 </div>
-<!-- display all salaries in ordered list 
-<ol>
-    <li>salary 1</li>
-    <li> salary 2</li>-->
+
+<table class="table table-bordered">
+    <tr *ngFor="let cont of contacts">
+        <td>{{cont.name}}</td>
+        <td *ngFor="let c of cont.contact">{{c}}</td>
+    </tr>
+</table>
+<table class="table table-bordered">
+    <tr *ngFor="let cont of contacts">
+        <td>{{cont.name}}</td>
+        <td>
+            <tr><td *ngFor="let c of cont.contact">{{c}}</td></tr>
+        </td>
+    </tr>
+</table>
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding
