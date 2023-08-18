@@ -11,6 +11,7 @@ export class HomeComponent {
   num2=0;
   addition=0;
   addition2=0;
+  age=0;
   constructor(){
     setTimeout(() => {
       this.empName="Vina"
