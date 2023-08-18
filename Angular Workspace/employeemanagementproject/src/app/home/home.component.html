@@ -30,8 +30,8 @@
     <p #myPara (mouseover)="templateTest(myPara)">
         Hello India
     </p>
-    <div class="w-50 bg-success">
-        <h3>ADDITION </h3>
+<div [ngClass]="styleClassArray">
+        <h3>ADDITION (with ngClass)</h3>
         <div class="mb-3">
             <label for="number1" class="form-label">Enter 1st Number</label>
             <input type="number" class="form-control"  placeholder="number1" #node1>

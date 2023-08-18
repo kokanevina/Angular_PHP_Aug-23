@@ -35,14 +35,22 @@ export class HomeComponent {
   colorarindex=0;
   colorArray=[{backgroundColor:'green',color:'yellow',},{backgroundColor:'red',color:'white',},{backgroundColor:'blue',color:'hotpink'}]
   colorObj={backgroundColor: this.bcolor, color: this.fcolor};
+
+  styleClassArray=['w-50', 'bg-success', 'fontClass'];
+
   constructor(){
     setTimeout(() => {
-      this.empName="Vina"
-    }, 3000);
+      this.empName="Vina"  
+      this.styleClassArray.push('border');
+      this.styleClassArray.push('border-5');
+      this.styleClassArray.push('border-primary');
+      this.styleClassArray.push('rounded-pill');
+    }, 1000);
 
     setInterval(()=>{
         this.changeColor();
-    },500)
+        this.styleClassArray.pop();
+    },3000)
   }
 
   changeColor(){
