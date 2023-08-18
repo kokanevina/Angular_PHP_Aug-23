@@ -12,7 +12,6 @@ export class Employee {
         this.employeeDesignation=employeeDesignation;
         this.employeeJoiningDate=employeeJoiningDate;
     }
-
     get eid(){
         return this.employeeId;
     }
