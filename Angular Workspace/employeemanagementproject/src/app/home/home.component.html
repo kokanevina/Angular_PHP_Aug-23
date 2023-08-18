@@ -120,6 +120,41 @@
         </p>
     </ng-template>
 </div>
+<hr>
+<div>
+    <h3>ngFor</h3>
+    <b *ngFor="let salary of salaryArray">{{salary}}<span>-</span></b>
+</div>
+<div>
+    <h3>ngFor</h3>
+    <p *ngFor="let salary of salaryArray; let i=index">
+        <span>Salary:{{salary}}</span>
+        <span>Index:{{i}}</span>
+    </p>
+</div>
+<div>
+    <h3>ngFor</h3>
+    <b *ngFor="let salary of salaryArray; let i=index">
+        <span>{{salary}}</span>
+        <span *ngIf="i<=salaryArray.length-2">-</span>
+    </b>
+</div>
+<div>
+    <h3>ngFor (display only even index elements)</h3>
+    <p *ngFor="let salary of salaryArray; let i=index; let e=even">
+        <span *ngIf="e">{{salary}}</span>
+    </p>
+</div>
+<div>
+    <h3>ngFor (display only odd index elements)</h3>
+    <p *ngFor="let salary of salaryArray; let i=index; let o=odd">
+        <span *ngIf="o">{{salary}}</span>
+    </p>
+</div>
+<!-- display all salaries in ordered list 
+<ol>
+    <li>salary 1</li>
+    <li> salary 2</li>-->
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding

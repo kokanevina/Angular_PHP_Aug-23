@@ -12,6 +12,8 @@ export class HomeComponent {
   addition=0;
   addition2=0;
   age=0;
+  salaryArray=[56000,78000,34000,67000,78000,55000,67000];
+ 
   constructor(){
     setTimeout(() => {
       this.empName="Vina"

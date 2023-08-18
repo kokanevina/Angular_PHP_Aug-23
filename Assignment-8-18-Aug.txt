@@ -1,0 +1,6 @@
+display all salaries from salary array in ordered list 
+<ol>
+    <li>salary 1</li>
+    <li> salary 2</li>
+....
+</ol>
