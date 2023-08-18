@@ -54,15 +54,55 @@
     <hr>
     <div>
         <h3>VOTER APPLICATION</h3>
-        <label for="age">Enter your age: </label><input type="number" id="age" [(ngModel)]="age">
+        <label for="age1">Enter your age: </label><input type="number" id="age1" [(ngModel)]="age">
         <h4>Your age is : {{age}}</h4>
         <p *ngIf="age<18" class="text-danger">   <!-- when if conditions bcms true then the element gets added, if false then element gets removed-->
             <b>Your are not allowed for voting</b>
         </p>
         <p *ngIf="age>=18" class="text-info"> <!-- when if condition bcms true then the element gets added, if false then element gets removed-->
-            Your age is valid for voting. Please proceed with the age proof
+            <b>Your age is valid for voting. Please proceed with the age proof</b>
         </p>
     </div>
+    <hr>
+
+    <div>
+        <h3>VOTER APPLICATION</h3>
+        <label for="age2">Enter your age: </label><input type="number" id="age2" [(ngModel)]="age">
+        <h4>Your age is : {{age}}</h4>
+        <p *ngIf="age<18;else voterelseblock" class="text-danger">   <!-- when if conditions bcms true then the element gets added, if false then element gets removed-->
+            <b>Your are not allowed for voting</b>
+        </p>
+        <ng-template #voterelseblock>
+            <p class="text-info"> <!-- when if condition bcms true then the element gets added, if false then element gets removed-->
+                <b>Your age is valid for voting. Please proceed with the age proof</b>
+            </p>
+        </ng-template>
+    </div>
+<hr>
+    <div>
+        <h3>VOTER APPLICATION (NESTED IF)</h3>
+        <label for="age3">Enter your age: </label><input type="number" id="age3" [(ngModel)]="age">
+        <h4>Your age is : {{age}}</h4>
+        <p *ngIf="age<18;else voterelseblock2" class="text-danger">   <!-- when if conditions bcms true then the element gets added, if false then element gets removed-->
+            <b>Your are not allowed for voting</b>
+        </p>
+        <ng-template #voterelseblock2>
+            <div class="text-info"> <!-- when if condition bcms true then the element gets added, if false then element gets removed-->
+                <b>Your age {{age}} is valid for voting. Please proceed with the age proof</b>
+
+                <div *ngIf="age>=18 && age<=35">
+                    <b>Young Voters</b>
+                </div>
+                <div *ngIf="age>35 && age<=55">
+                    <b>Adult Voters</b>
+                </div>
+                <div *ngIf="age>55">
+                    <b>Elder Voters</b>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding
