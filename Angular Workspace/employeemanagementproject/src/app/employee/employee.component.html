@@ -1,1 +1,24 @@
-<p>employee works!</p>
+<section>
+    <h3>EMPLOYEE INFORMATION</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DESIGNATION</th>
+                <th>SALARY</th>
+                <th>JOINING DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.eid}}</td>
+                <td>{{employee.ename}}</td>
+                <td>{{employee.edesignation}}</td>
+                <td>{{employee.esalary}}</td>
+                <td>{{employee.ejoiningDate}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>
