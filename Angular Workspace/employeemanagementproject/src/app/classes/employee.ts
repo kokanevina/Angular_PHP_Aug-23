@@ -4,13 +4,15 @@ export class Employee {
     private employeeSalary:number;
     private employeeDesignation:string;
     private employeeJoiningDate:Date;
-    constructor(employeeId=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date())
+    private employeeImage:string
+    constructor(employeeId=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date(), employeeImage="")
     {
         this.employeeId=employeeId;
         this.employeeName=employeeName;
         this.employeeSalary=employeeSalary
         this.employeeDesignation=employeeDesignation;
         this.employeeJoiningDate=employeeJoiningDate;
+        this.employeeImage=employeeImage;
     }
     get eid(){
         return this.employeeId;
@@ -41,6 +43,12 @@ export class Employee {
     }
     set ejoiningDate(employeeJoiningDate:Date){
         this.employeeJoiningDate=employeeJoiningDate;
+    }
+    get eimage(){
+        return this.employeeImage;
+    }
+    set eimage(employeeImage:string){
+        this.employeeImage=employeeImage;
     }
 
 }
