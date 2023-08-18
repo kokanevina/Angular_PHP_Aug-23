@@ -35,9 +35,15 @@ export class HomeComponent {
   colorarindex=0;
   colorArray=[{backgroundColor:'green',color:'yellow',},{backgroundColor:'red',color:'white',},{backgroundColor:'blue',color:'hotpink'}]
   colorObj={backgroundColor: this.bcolor, color: this.fcolor};
-
   styleClassArray=['w-50', 'bg-success', 'fontClass'];
-
+  styleClassObject={
+    'w-50':true,
+    'bg-success':true,
+    'fontClass':true
+  }
+   fontObject={
+    fontSize:'40px'
+  }
   constructor(){
     setTimeout(() => {
       this.empName="Vina"  

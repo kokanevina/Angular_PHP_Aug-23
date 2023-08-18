@@ -1,0 +1,1 @@
+how to change class values in typescript
