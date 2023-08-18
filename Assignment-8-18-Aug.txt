@@ -1,6 +1,16 @@
-display all salaries from salary array in ordered list 
+1. display all salaries from salary array in ordered list 
 <ol>
     <li>salary 1</li>
     <li> salary 2</li>
 ....
 </ol>
+
+2. 
+Create object array for localtrain (e.g. mumbai) having id, route (e.g. harbour, central), stopsArray
+Display above array in table format using nested for. Table must have heading also
+Output should be 
+ID    ROUTE           STOPS
+123 transharbour Thane-Airoli-Rabale-Ghansoli-KoparKh-Turbhe-Vashi
+
+
+
