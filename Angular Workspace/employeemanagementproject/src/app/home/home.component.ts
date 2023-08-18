@@ -33,7 +33,8 @@ export class HomeComponent {
   bcolor='aqua';
   fcolor='blue';
   colorarindex=0;
-  colorArray=[{back:'green',fore:'yellow',},{back:'red',fore:'white',},{back:'blue',fore:'hotpink'}]
+  colorArray=[{backgroundColor:'green',color:'yellow',},{backgroundColor:'red',color:'white',},{backgroundColor:'blue',color:'hotpink'}]
+  colorObj={backgroundColor: this.bcolor, color: this.fcolor};
   constructor(){
     setTimeout(() => {
       this.empName="Vina"
@@ -46,9 +47,9 @@ export class HomeComponent {
 
   changeColor(){
     console.log("in function");
-      let colorObj=this.colorArray[this.colorarindex];
-      this.bcolor=colorObj.back;
-      this.fcolor=colorObj.fore;
+      this.colorObj=this.colorArray[this.colorarindex];
+      this.bcolor=this.colorObj.backgroundColor;
+      this.fcolor=this.colorObj.color;
       this.colorarindex++;
       if(this.colorarindex==this.colorArray.length)
         this.colorarindex=0;

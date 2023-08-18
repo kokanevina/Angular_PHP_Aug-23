@@ -9,7 +9,7 @@
     <label for="test">Event Testing</label>
     <input type="text" id="test" (blur)="test2()">
 </div>
-<div class="w-50 bg-success">
+<div class="w-50" [ngStyle]="colorObj">
     <h3>ADDITION </h3>
     <div class="mb-3">
         <label for="number1" class="form-label">Enter 1st Number</label>
