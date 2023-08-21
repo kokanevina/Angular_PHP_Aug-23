@@ -1,0 +1,7 @@
+Create Login Component and
+Design BootStrap login form
+
+Create Registration Component 
+and Design Registration form
+
+name, age, email , mobile number, username, password, confirm password
