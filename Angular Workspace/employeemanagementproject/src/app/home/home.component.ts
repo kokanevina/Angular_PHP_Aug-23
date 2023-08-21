@@ -93,4 +93,25 @@ export class HomeComponent {
     
   }
 
+  linkObject={
+    linkref:"https://www.google.com",
+    linkName:"GOOGLE"
+  }
+
+  links=[
+    {
+      linkref:"https://www.tutorialspoint.com/index.htm",
+      linkName:"TutorialsPoint"
+    },
+
+    {
+      linkref:"https://www.w3schools.com",
+      linkName:"W3Schools"
+    },
+    {
+      linkref:"https://www.javatpoint.com",
+      linkName:"JavatPoint"
+    },
+
+  ]
 }

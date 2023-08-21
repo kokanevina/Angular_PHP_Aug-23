@@ -179,7 +179,19 @@
         <p *ngSwitchDefault>INVALID NUMBER</p>
     </div>
 </div>
-
+<div>
+    <!-- design this achor tag with bootstrap-->
+    <a [href]="linkObject.linkref">{{linkObject.linkName}}</a>
+    <h3>Learning Websites</h3>
+     <!-- design this nav with bootstrap (bootstrap lists)-->
+    <nav>
+        <ol>
+            <li *ngFor="let link of links">
+                <a [href]="link.linkref">{{link.linkName}}</a>
+            </li>
+        </ol>
+    </nav>
+</div>
 <!--
     {{}} : string interpolation (1-way db)
     [()] : 2-way data binding
