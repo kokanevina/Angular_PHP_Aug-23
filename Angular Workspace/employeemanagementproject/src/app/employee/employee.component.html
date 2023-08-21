@@ -2,30 +2,18 @@
     <h3>EMPLOYEE INFORMATION</h3>
     <table class="table table-hover">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>UP NAME</th>
-                <th>LOW NAME</th>
-                <th>TITLE NAME</th>
-                <th>DESIGNATION</th>
-                <th>Technology</th>
-                <th>SALARY</th>
-                <th>SALARY</th>  <th>SALARY</th>
-                <th>SALARY</th>
-                <th>SALARY</th>
-                <th>Designation length</th>
-            </tr>
+           
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees">
                 <td>{{employee.eid}}</td>
-                <td>{{employee.ename}}</td>
+                <td>{{employee.ename }}</td>
+                <td>{{employee.ename | index : 'p' }}</td>
                 <td>{{employee.ename | uppercase }}</td> <!-- transform (pipename, ...array)-->
                 <td>{{employee.ename | lowercase }}</td>
                 <td>{{employee.ename | titlecase }}</td>
                 <td>{{employee.edesignation  }}</td>
-                <td>{{employee.edesignation | slice : 0 : employee.edesignation.indexOf("Developer")-1  | uppercase}}</td>
+                <td>{{employee.edesignation | slice : 0 : (employee.edesignation | index : "Developer") | uppercase}}</td>
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.esalary | number}}</td> <!-- seperator, round to 3(max)-->
                 <td>{{employee.esalary | number : ".1-2" }}</td> <!--"d.min-max" u can omit d-->

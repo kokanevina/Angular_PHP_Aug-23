@@ -12,6 +12,7 @@ import { ArticleComponent } from './article/article.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { LengthPipe } from './pipes/length.pipe';
+import { IndexPipe } from './pipes/index.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LengthPipe } from './pipes/length.pipe';
     ArticleComponent,
     EmployeeComponent,
     EmployeeCardComponent,
-    LengthPipe
+    LengthPipe,
+    IndexPipe
 
   ],
   imports: [

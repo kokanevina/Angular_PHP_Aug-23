@@ -1,0 +1,10 @@
+Display Card Entity
+ 
+Entity one property in Upper case
+
+Designation 2nd property title case
+
+Date in Full Date
+
+Display number in indiann rupees
+
