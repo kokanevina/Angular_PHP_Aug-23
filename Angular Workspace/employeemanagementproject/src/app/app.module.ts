@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeCardComponent } from './employee-card/employee-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmployeeComponent } from './employee/employee.component';
     FooterComponent,
     HomeComponent,
     ArticleComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeCardComponent
   ],
   imports: [
     BrowserModule,

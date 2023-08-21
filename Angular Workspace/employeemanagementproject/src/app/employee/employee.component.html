@@ -23,18 +23,8 @@
 </section>
 <section>
     <div class="row">
-        <div class="col-md-3" *ngFor="let employee of employees">
-            <div class="card bg-warning">
-                <img [src]="employee.eimage" class="card-img-top" [alt]="employee.eid">
-                <div class="card-body">
-                    <h6 class="card-title">{{employee.eid}}</h6>
-                  <h5 class="card-title">{{employee.ename}}</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary"> <td>{{employee.edesignation}}</td></h6>
-                  <h6 class="card-subtitle mb-2 text-success"> <td>Joined on {{employee.ejoiningDate}}</td></h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">SHOW MORE INFO</a>
-                </div>
-              </div>
+        <div class="col-md-3" *ngFor="let emp of employees">
+            <app-employee-card [employee]="emp"></app-employee-card> <!-- component gets repeated till the end of the array-->
         </div>
     </div>
 </section>

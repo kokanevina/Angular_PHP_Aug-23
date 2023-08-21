@@ -14,3 +14,4 @@ export class EmployeeComponent {
     this.employees.push(new Employee(434,"Amol Puranik",56000,"Java Developer",new Date('12 May 2015'),"assets/Images/e434.jpg"));
   }
 }
+
