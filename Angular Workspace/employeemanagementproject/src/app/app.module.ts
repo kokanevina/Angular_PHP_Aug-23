@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
+import { LengthPipe } from './pipes/length.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
     HomeComponent,
     ArticleComponent,
     EmployeeComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
+    LengthPipe
+
   ],
   imports: [
     BrowserModule,

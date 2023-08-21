@@ -14,7 +14,7 @@
                 <th>SALARY</th>  <th>SALARY</th>
                 <th>SALARY</th>
                 <th>SALARY</th>
-                <th>JOINING DATE</th>
+                <th>Designation length</th>
             </tr>
         </thead>
         <tbody>
@@ -24,13 +24,15 @@
                 <td>{{employee.ename | uppercase }}</td> <!-- transform (pipename, ...array)-->
                 <td>{{employee.ename | lowercase }}</td>
                 <td>{{employee.ename | titlecase }}</td>
-                <td>{{employee.edesignation }}</td>
+                <td>{{employee.edesignation  }}</td>
                 <td>{{employee.edesignation | slice : 0 : employee.edesignation.indexOf("Developer")-1  | uppercase}}</td>
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.esalary | number}}</td> <!-- seperator, round to 3(max)-->
                 <td>{{employee.esalary | number : ".1-2" }}</td> <!--"d.min-max" u can omit d-->
                 <td>{{employee.esalary | currency}}</td> <!-- $, seperator round to 2 (exact)-->
                 <td>{{employee.esalary | currency : 'INR' : false : ".3-3"}}</td> <!-- true for symbol false for code-->
+                <td>{{employee.edesignation | length }}</td> <!-- No pipe found with name 'length' : custom pipe-->
+            
             </tr>
         </tbody>
     </table>
