@@ -11,6 +11,9 @@
                 <th>DESIGNATION</th>
                 <th>Technology</th>
                 <th>SALARY</th>
+                <th>SALARY</th>  <th>SALARY</th>
+                <th>SALARY</th>
+                <th>SALARY</th>
                 <th>JOINING DATE</th>
             </tr>
         </thead>
@@ -24,7 +27,35 @@
                 <td>{{employee.edesignation }}</td>
                 <td>{{employee.edesignation | slice : 0 : employee.edesignation.indexOf("Developer")-1  | uppercase}}</td>
                 <td>{{employee.esalary}}</td>
+                <td>{{employee.esalary | number}}</td> <!-- seperator, round to 3(max)-->
+                <td>{{employee.esalary | number : ".1-2" }}</td> <!--"d.min-max" u can omit d-->
+                <td>{{employee.esalary | currency}}</td> <!-- $, seperator round to 2 (exact)-->
+                <td>{{employee.esalary | currency : 'INR' : false : ".3-3"}}</td> <!-- true for symbol false for code-->
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section>
+    <h3>DATE FORMATTING</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>    
+                <th>JOINING DATE</th>
+                <th>JOINING DATE</th>
+                <th>JOINING DATE</th>
+                <th>JOINING DATE</th>
+                <th>CURRENT DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.eid}}</td>
                 <td>{{employee.ejoiningDate}}</td>
+                <td>{{employee.ejoiningDate | date}}</td>
+                <td>{{employee.ejoiningDate | date : "mediumDate"}}</td> <!-- apply difft keywords-->
+                <td>{{employee.ejoiningDate | date :"E, dd/MM/yy"}}</td>
+                <td>{{today | date: "E, MMM dd, yyyy"}}</td>
             </tr>
         </tbody>
     </table>
