@@ -22,9 +22,10 @@
     </table>
 </section>
 <section>
+    <h4>{{cname}}</h4>
     <div class="row">
         <div class="col-md-3" *ngFor="let emp of employees">
-            <app-employee-card [employee]="emp"></app-employee-card> <!-- component gets repeated till the end of the array-->
+            <app-employee-card [employee]="emp" (emitter)="receiver($event)"></app-employee-card> <!-- component gets repeated till the end of the array-->
         </div>
     </div>
 </section>

@@ -4,11 +4,11 @@
     <app-header></app-header> <!-- component directive-->
     <div class="middlesection">
         <button (click)="hideshow()">SHOW/HIDE</button>
-        <div *ngIf="flag">
+       <!--  <div *ngIf="flag">
             <app-home></app-home>
         </div>
-     
-      <!-- <app-employee></app-employee> -->
+      -->
+    <app-employee></app-employee>
     </div>
     <div *ngFor="let y of testArray">
         <app-footer></app-footer>
