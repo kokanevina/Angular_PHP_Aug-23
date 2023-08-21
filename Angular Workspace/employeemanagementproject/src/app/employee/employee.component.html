@@ -5,7 +5,11 @@
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
+                <th>UP NAME</th>
+                <th>LOW NAME</th>
+                <th>TITLE NAME</th>
                 <th>DESIGNATION</th>
+                <th>Technology</th>
                 <th>SALARY</th>
                 <th>JOINING DATE</th>
             </tr>
@@ -14,13 +18,18 @@
             <tr *ngFor="let employee of employees">
                 <td>{{employee.eid}}</td>
                 <td>{{employee.ename}}</td>
-                <td>{{employee.edesignation}}</td>
+                <td>{{employee.ename | uppercase }}</td> <!-- transform (pipename, ...array)-->
+                <td>{{employee.ename | lowercase }}</td>
+                <td>{{employee.ename | titlecase }}</td>
+                <td>{{employee.edesignation }}</td>
+                <td>{{employee.edesignation | slice : 0 : employee.edesignation.indexOf("Developer")-1  | uppercase}}</td>
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.ejoiningDate}}</td>
             </tr>
         </tbody>
     </table>
 </section>
+<hr>
 <section>
     <h4>{{cname}}</h4>
     <div class="row">
