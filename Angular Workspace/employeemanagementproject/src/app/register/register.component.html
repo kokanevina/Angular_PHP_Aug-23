@@ -36,25 +36,25 @@
                           <input type="text" name="mobile" id="mobile" class="form-control" formControlName="customerMobile">
                           <div *ngIf="cmobile!.touched" class="text-danger">
                             <p *ngIf="cmobile?.hasError('required')">Mobile number is required</p>
-                            <p *ngIf="cmobile?.hasError('pattern') || cmobile?.hasError('minlength') || cmobile?.hasError('maxlength')">Please enter valid 10 digit mobile number</p>
+                            <p *ngIf="cmobile?.hasError('pattern')">Please enter valid 10 digit mobile number</p>
                           </div> 
                         </div>
                         <div class="form-group">
-                            <label for="username" class="text-info">Username:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" formControlName="customeruname">
-                            <div *ngIf="cname!.touched" class="text-danger">
-                              <p *ngIf="cname?.hasError('required')">name is required</p>
-                              <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
-                            </div>   
-                          </div>
+                          <label for="username" class="text-info">Set Username:</label><br>
+                          <input type="text" name="username" id="username" class="form-control" formControlName="customeruname">
+                          <div *ngIf="username!.touched" class="text-danger">
+                            <p *ngIf="username?.hasError('required')">username is required</p>
+                            <p *ngIf="username?.hasError('minlength') || username?.hasError('maxlength')">4 to 20 characters allowed</p>
+                          </div>   
+                        </div>
                         <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control" formControlName="customerPassword">
-                            <div *ngIf="cname!.touched" class="text-danger">
-                              <p *ngIf="cname?.hasError('required')">name is required</p>
-                              <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
-                            </div> 
-                          </div>
+                          <label for="password" class="text-info">Password:</label><br>
+                          <input type="text" name="password" id="password" class="form-control" formControlName="customerPassword">
+                          <div *ngIf="cname!.touched" class="text-danger">
+                            <p *ngIf="cname?.hasError('required')">name is required</p>
+                            <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                          </div> 
+                        </div>
                         <div class="form-group">
                           <label for="cpassword" class="text-info">Confirm Password:</label><br>
                           <input type="text" name="cpassword" id="cpassword" class="form-control" formControlName="customerConfirmPassword">
@@ -64,8 +64,8 @@
                           </div> 
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                            <input type="reset" name="reset" class="btn btn-info btn-md" value="reset">
+                          <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                          <input type="reset" name="reset" class="btn btn-info btn-md" value="reset">
                         </div>
                     </form>
                 </div>

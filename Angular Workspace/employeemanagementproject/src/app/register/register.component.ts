@@ -8,14 +8,14 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 export class RegisterComponent {
    registerForm:FormGroup;
    namePattern="[A-Za-z ]*";
-   mobilePattern="[0-9]*";
+   mobilePattern="[0-9]{10,10}";
   constructor(){ 
     this.registerForm=new FormGroup({
       customerName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern)]),
       customerEmail:new FormControl("",[Validators.required, Validators.email]),
       customerAge:new FormControl("",[Validators.required, Validators.min(16), Validators.max(70)]),
-      customerMobile:new FormControl("",[Validators.required, Validators.pattern(this.mobilePattern), Validators.minLength(10),Validators.maxLength(10)]),
-      customeruname:new FormControl("",[Validators.required]),
+      customerMobile:new FormControl("",[Validators.required, Validators.pattern(this.mobilePattern)]),
+      customeruname:new FormControl("",[Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
       customerPassword:new FormControl("",[Validators.required]),
       customerConfirmPassword:new FormControl("",[Validators.required])
     });
