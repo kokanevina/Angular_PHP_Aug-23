@@ -11,6 +11,15 @@
   #registration .container #registration-row #registration-column #registration-box #registration-form  {
     margin-top: -85px;
   }
-input.ng-untouched{
+input.ng-pristine{
   background-color: yellow;
+}
+input.ng-dirty{
+  background-color: pink;
+}
+input.ng-valid, form.ng-valid{
+  border: 2px solid green
+}
+input.ng-invalid, form.ng-invalid{
+  border: 2px solid red
 }
