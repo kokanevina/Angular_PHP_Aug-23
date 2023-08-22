@@ -5,7 +5,7 @@
         <div id="registration-row" class="row justify-content-center align-items-center">
             <div id="registration-column" class="col-md-6">
                 <div id="registration-box" class="col-md-12">
-                    <form id="registration-form" class="form" method="post" [formGroup]="registerForm">
+                    <form id="registration-form" class="form" method="post" [formGroup]="registerForm" (submit)="collectCustomerData()">
                         <h3 class="text-center text-info">Registration</h3>
                         <div class="form-group">
                           <label for="name" class="text-info">Name:</label><br>
@@ -50,21 +50,30 @@
                         <div class="form-group">
                           <label for="password" class="text-info">Password:</label><br>
                           <input type="text" name="password" id="password" class="form-control" formControlName="customerPassword">
-                          <div *ngIf="cname!.touched" class="text-danger">
-                            <p *ngIf="cname?.hasError('required')">name is required</p>
-                            <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                          <div *ngIf="password!.touched" class="text-danger">
+                            <p *ngIf="password?.hasError('required')">Password is required</p>
+                            <div *ngIf="password?.hasError('pattern')">
+                                <b>Password must contain atleast one</b>
+                               <ol>
+                                  <li>small letter</li>
+                                  <li>capital letter</li>
+                                  <li>digit</li>
+                                  <li>special symbol()</li>
+                               </ol>
+                               <b>Password must be 6 to 30 characters long</b>
+                            </div>
                           </div> 
                         </div>
                         <div class="form-group">
                           <label for="cpassword" class="text-info">Confirm Password:</label><br>
                           <input type="text" name="cpassword" id="cpassword" class="form-control" formControlName="customerConfirmPassword">
-                          <div *ngIf="cname!.touched" class="text-danger">
-                            <p *ngIf="cname?.hasError('required')">name is required</p>
-                            <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                          <div *ngIf="confirmpass!.touched" class="text-danger">
+                            <p *ngIf="confirmpass?.hasError('required')">Password confirmation is required</p>
+                            <p *ngIf="registerForm?.hasError('passwordmatch')">Both password must be same</p>
                           </div> 
                         </div>
                         <div class="form-group">
-                          <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                          <input type="submit" name="submit" class="btn btn-info btn-md" value="submit" [disabled]="registerForm.invalid">
                           <input type="reset" name="reset" class="btn btn-info btn-md" value="reset">
                         </div>
                     </form>

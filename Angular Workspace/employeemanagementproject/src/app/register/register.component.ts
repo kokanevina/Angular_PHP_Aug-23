@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { CustomValidator } from '../classes/custom-validator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+   customValidator=new CustomValidator();
    registerForm:FormGroup;
    namePattern="[A-Za-z ]*";
    mobilePattern="[0-9]{10,10}";
+   passwordPattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,30}";
   constructor(){ 
     this.registerForm=new FormGroup({
       customerName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern)]),
@@ -16,9 +19,9 @@ export class RegisterComponent {
       customerAge:new FormControl("",[Validators.required, Validators.min(16), Validators.max(70)]),
       customerMobile:new FormControl("",[Validators.required, Validators.pattern(this.mobilePattern)]),
       customeruname:new FormControl("",[Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      customerPassword:new FormControl("",[Validators.required]),
+      customerPassword:new FormControl("",[Validators.required, Validators.pattern(this.passwordPattern)]),
       customerConfirmPassword:new FormControl("",[Validators.required])
-    });
+    }, this.customValidator.passwordMatch );
   }
 
   get cname(){
@@ -42,7 +45,14 @@ export class RegisterComponent {
   get confirmpass(){
     return this.registerForm.get('customerConfirmPassword');
   }
+
+  collectCustomerData(){
+    console.log(this.registerForm.value);
+  }
 }
+
+
+
 
 /*
    requiredValidator(){
