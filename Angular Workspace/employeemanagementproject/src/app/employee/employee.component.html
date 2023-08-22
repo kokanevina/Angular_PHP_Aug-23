@@ -1,8 +1,7 @@
 <section>
     <h3>EMPLOYEE INFORMATION</h3>
     <table class="table table-hover">
-        <thead>
-           
+        <thead>       
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees">
@@ -46,6 +45,32 @@
                 <td>{{employee.ejoiningDate | date : "mediumDate"}}</td> <!-- apply difft keywords-->
                 <td>{{employee.ejoiningDate | date :"E, dd/MM/yy"}}</td>
                 <td>{{today | date: "E, MMM dd, yyyy"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<hr>
+<section>
+    <h3>ORDER BY</h3>
+    <p><b>Number array:</b> {{[45,23,11,22,33,1,5,6] | orderby}}</p>
+    <p>{{["vina","pavan","amol","charan", "vira", "india",'indian'] | orderby }}</p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="bg-success" (click)="sendKey('eid')">ID</th>
+                <th class="bg-danger" (click)="sendKey('ename')">NAME</th>
+                <th class="bg-info" (click)="sendKey('esalary')"> SALARY</th>
+                <th class="bg-primary" (click)="sendKey('edesignation')">DESIGNATION</th>
+                <th class="bg-warning" (click)="sendKey('ejoiningDate')">JOINING DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees | orderby : orderKey">
+                <td>{{employee.eid}}</td>
+                <td>{{employee.ename }}</td>
+                <td>{{employee.esalary}}</td>
+                <td>{{employee.edesignation  }}</td>
+                <td>{{employee.ejoiningDate}}</td>
             </tr>
         </tbody>
     </table>

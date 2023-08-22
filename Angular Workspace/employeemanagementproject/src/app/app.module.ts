@@ -13,6 +13,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { LengthPipe } from './pipes/length.pipe';
 import { IndexPipe } from './pipes/index.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { IndexPipe } from './pipes/index.pipe';
     EmployeeComponent,
     EmployeeCardComponent,
     LengthPipe,
-    IndexPipe
-
+    IndexPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
