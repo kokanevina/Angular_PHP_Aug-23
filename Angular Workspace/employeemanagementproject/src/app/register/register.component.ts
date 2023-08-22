@@ -7,7 +7,7 @@ import { CustomValidator } from '../classes/custom-validator';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-   customValidator=new CustomValidator();
+   custom=new CustomValidator();
    registerForm:FormGroup;
    namePattern="[A-Za-z ]*";
    mobilePattern="[0-9]{10,10}";
@@ -21,7 +21,7 @@ export class RegisterComponent {
       customeruname:new FormControl("",[Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
       customerPassword:new FormControl("",[Validators.required, Validators.pattern(this.passwordPattern)]),
       customerConfirmPassword:new FormControl("",[Validators.required])
-    }, this.customValidator.passwordMatch );
+    }, this.custom.passwordMatch );
   }
 
   get cname(){
