@@ -1,0 +1,20 @@
+Create Admin Login Form  (Template Driven Form)
+username, password login, reset
+
+Design with bootstrap
+
+
+Create Entity Add Form  (E.g. Book)  (Reactive Form)
+
+form controls for id, name, price, publishedDate.....
+
+in ts file while declaring FormControl object use the same keys that of entity class
+bid:new FormControl(""....);
+
+class Book{
+  bookId
+
+
+
+  bid
+}
