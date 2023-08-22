@@ -8,13 +8,13 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 export class RegisterComponent {
    registerForm:FormGroup;
    namePattern="[A-Za-z ]*";
-   nameP=new RegExp("[A-Za-z ]*");
+   mobilePattern="[0-9]*";
   constructor(){ 
     this.registerForm=new FormGroup({
       customerName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern)]),
-      customerEmail:new FormControl("",[Validators.required]),
-      customerAge:new FormControl("",[Validators.required]),
-      customerMobile:new FormControl("",[Validators.required]),
+      customerEmail:new FormControl("",[Validators.required, Validators.email]),
+      customerAge:new FormControl("",[Validators.required, Validators.min(16), Validators.max(70)]),
+      customerMobile:new FormControl("",[Validators.required, Validators.pattern(this.mobilePattern), Validators.minLength(10),Validators.maxLength(10)]),
       customeruname:new FormControl("",[Validators.required]),
       customerPassword:new FormControl("",[Validators.required]),
       customerConfirmPassword:new FormControl("",[Validators.required])
@@ -23,6 +23,24 @@ export class RegisterComponent {
 
   get cname(){
     return this.registerForm.get('customerName');
+  }
+  get cmail(){
+    return this.registerForm.get('customerEmail');
+  }
+  get cage(){
+    return this.registerForm.get('customerAge');
+  }
+  get cmobile(){
+    return this.registerForm.get('customerMobile');
+  }
+  get username(){
+    return this.registerForm.get('customeruname');
+  }
+  get password(){
+    return this.registerForm.get('customerPassword');
+  }
+  get confirmpass(){
+    return this.registerForm.get('customerConfirmPassword');
   }
 }
 

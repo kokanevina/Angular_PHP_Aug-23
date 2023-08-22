@@ -18,26 +18,50 @@
                         <div class="form-group">
                           <label for="mail" class="text-info">Email:</label><br>
                           <input type="email"  id="mail" class="form-control" formControlName="customerEmail" >
+                          <div *ngIf="cmail!.touched" class="text-danger">
+                            <p *ngIf="cmail?.hasError('required')">email id  is required</p>
+                            <p *ngIf="cmail?.hasError('email')">Please put valid email id</p>
+                          </div> 
                         </div>
                         <div class="form-group">
                           <label for="age" class="text-info">Age:</label><br>
                           <input type="number" name="age" id="age" class="form-control" formControlName="customerAge">
+                          <div *ngIf="cage!.touched" class="text-danger">
+                            <p *ngIf="cage?.hasError('required')">Age is required</p>
+                            <p *ngIf="cage?.hasError('min') || cage?.hasError('max')">Age must be 16 to 70</p>
+                          </div> 
                         </div>
                         <div class="form-group">
                           <label for="mobile" class="text-info">Mobile:</label><br>
-                          <input type="number" name="mobile" id="mobile" class="form-control" formControlName="customerMobile">
+                          <input type="text" name="mobile" id="mobile" class="form-control" formControlName="customerMobile">
+                          <div *ngIf="cmobile!.touched" class="text-danger">
+                            <p *ngIf="cmobile?.hasError('required')">Mobile number is required</p>
+                            <p *ngIf="cmobile?.hasError('pattern') || cmobile?.hasError('minlength') || cmobile?.hasError('maxlength')">Please enter valid 10 digit mobile number</p>
+                          </div> 
                         </div>
                         <div class="form-group">
                             <label for="username" class="text-info">Username:</label><br>
                             <input type="text" name="username" id="username" class="form-control" formControlName="customeruname">
-                        </div>
+                            <div *ngIf="cname!.touched" class="text-danger">
+                              <p *ngIf="cname?.hasError('required')">name is required</p>
+                              <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                            </div>   
+                          </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
                             <input type="text" name="password" id="password" class="form-control" formControlName="customerPassword">
-                        </div>
+                            <div *ngIf="cname!.touched" class="text-danger">
+                              <p *ngIf="cname?.hasError('required')">name is required</p>
+                              <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                            </div> 
+                          </div>
                         <div class="form-group">
                           <label for="cpassword" class="text-info">Confirm Password:</label><br>
                           <input type="text" name="cpassword" id="cpassword" class="form-control" formControlName="customerConfirmPassword">
+                          <div *ngIf="cname!.touched" class="text-danger">
+                            <p *ngIf="cname?.hasError('required')">name is required</p>
+                            <p *ngIf="cname?.hasError('pattern')">only alphabets allowed in name</p>
+                          </div> 
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
