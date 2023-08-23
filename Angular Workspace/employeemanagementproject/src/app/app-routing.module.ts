@@ -6,12 +6,14 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { TrainerComponent } from './trainer/trainer.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 const routes: Routes = [
   { path:'home', component:HomeComponent },
   { path:'myhome', component:HomeComponent },
   { path:'login', component:LoginComponent},
   { path:'register', component:RegisterComponent},
+  { path: 'details/:empId', component:EmployeeDetailsComponent}, //empId is registered variable, holds the value of route
   { path:'employees/showemployees', 
     component:EmployeeComponent,
     children:[

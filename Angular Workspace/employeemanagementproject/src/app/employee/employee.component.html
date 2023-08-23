@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <h3>EMPLOYEE INFORMATION</h3>
     <table class="table table-hover">
         <thead>       
@@ -8,17 +8,17 @@
                 <td>{{employee.eid}}</td>
                 <td>{{employee.ename }}</td>
                 <td>{{employee.ename | index : 'p' }}</td>
-                <td>{{employee.ename | uppercase }}</td> <!-- transform (pipename, ...array)-->
+                <td>{{employee.ename | uppercase }}</td> 
                 <td>{{employee.ename | lowercase }}</td>
                 <td>{{employee.ename | titlecase }}</td>
                 <td>{{employee.edesignation  }}</td>
                 <td>{{employee.edesignation | slice : 0 : (employee.edesignation | index : "Developer") | uppercase}}</td>
                 <td>{{employee.esalary}}</td>
-                <td>{{employee.esalary | number}}</td> <!-- seperator, round to 3(max)-->
-                <td>{{employee.esalary | number : ".1-2" }}</td> <!--"d.min-max" u can omit d-->
-                <td>{{employee.esalary | currency}}</td> <!-- $, seperator round to 2 (exact)-->
-                <td>{{employee.esalary | currency : 'INR' : false : ".3-3"}}</td> <!-- true for symbol false for code-->
-                <td>{{employee.edesignation | length }}</td> <!-- No pipe found with name 'length' : custom pipe-->
+                <td>{{employee.esalary | number}}</td> 
+                <td>{{employee.esalary | number : ".1-2" }}</td> 
+                <td>{{employee.esalary | currency}}</td> 
+                <td>{{employee.esalary | currency : 'INR' : false : ".3-3"}}</td> 
+                <td>{{employee.edesignation | length }}</td>
             
             </tr>
         </tbody>
@@ -42,15 +42,15 @@
                 <td>{{employee.eid}}</td>
                 <td>{{employee.ejoiningDate}}</td>
                 <td>{{employee.ejoiningDate | date}}</td>
-                <td>{{employee.ejoiningDate | date : "mediumDate"}}</td> <!-- apply difft keywords-->
+                <td>{{employee.ejoiningDate | date : "mediumDate"}}</td> 
                 <td>{{employee.ejoiningDate | date :"E, dd/MM/yy"}}</td>
                 <td>{{today | date: "E, MMM dd, yyyy"}}</td>
             </tr>
         </tbody>
     </table>
 </section>
-<hr>
-<section>
+<hr>-->
+<section> 
     <h3>ORDER BY</h3>
     <p><b>Number array:</b> {{[45,23,11,22,33,1,5,6] | orderby}}</p>
     <p>{{["vina","pavan","amol","charan", "vira", "india",'indian'] | orderby }}</p>
@@ -62,6 +62,7 @@
                 <th class="bg-info" (click)="sendKey('esalary')"> SALARY</th>
                 <th class="bg-primary" (click)="sendKey('edesignation')">DESIGNATION</th>
                 <th class="bg-warning" (click)="sendKey('ejoiningDate')">JOINING DATE</th>
+                <th class="bg-success" >ACTION</th>
             </tr>
         </thead>
         <tbody>
@@ -71,6 +72,7 @@
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.edesignation  }}</td>
                 <td>{{employee.ejoiningDate}}</td>
+                <td><a [routerLink]="['/details', employee.eid]">SHOW DETAILS</a></td>
             </tr>
         </tbody>
     </table>
