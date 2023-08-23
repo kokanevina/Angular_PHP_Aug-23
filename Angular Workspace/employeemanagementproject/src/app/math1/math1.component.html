@@ -8,7 +8,11 @@
     <label for="num4">Enter 4th number</label>
     <input type="number" [(ngModel)]="num4" id="num4"><br>
     <button (click)="add()">ADD</button>
+    <button (click)="subtract()">SUBTRACT</button>
     <div *ngIf="sum>0">
         <b>SUM IS {{sum}}</b>
+    </div>
+    <div *ngIf="sub>=0">
+        <b>Subtracttion is {{sub}}</b>
     </div>
 </div>

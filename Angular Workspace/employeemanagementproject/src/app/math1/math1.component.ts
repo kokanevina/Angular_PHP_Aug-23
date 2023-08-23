@@ -8,13 +8,16 @@ import { MathsService } from '../services/maths.service';
 export class Math1Component {
  num1=0;num2=0;num3=0;num4=0;
  sum=0;
+ sub=0;
  numArray:number[]=new Array();
   constructor(private maths:MathsService){
     console.log("in math1 component");
-    
   }
   add(){
     this.sum=this.maths.mathAdd(this.num1,this.num2,this.num3,this.num4);
     // component requires service to add numbers from array
+  }
+  subtract(){
+    this.sub=this.maths.mathSubtract(this.num1,this.num2,this.num3,this.num4);
   }
 }
