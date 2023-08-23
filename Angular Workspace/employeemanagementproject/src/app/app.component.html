@@ -3,10 +3,12 @@
     <b>{{title}}</b> <!-- data binding--> 
     <app-header></app-header> <!-- component directive-->
     <div class="middlesection">
-      <h3>This section is Dynamic View</h3>
+      <h3>Below section is Dynamic View</h3>
       <router-outlet> <!-- to display dynamic view (component gets loaded here)-->
 
       </router-outlet>
+      
+      <h3>Above section is Dynamic View</h3>
     </div>
     <div *ngFor="let y of testArray">
         <app-footer></app-footer>
