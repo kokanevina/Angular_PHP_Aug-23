@@ -25,8 +25,7 @@ const routes: Routes = [
     ]
   },
   { path:'', component:HomeComponent },
-  {path:'**', component:/*PageNotFoundComponent */}
-
+ /*  {path:'**', component:ViewNotFoundComponent }*/
 ];
 
 @NgModule({

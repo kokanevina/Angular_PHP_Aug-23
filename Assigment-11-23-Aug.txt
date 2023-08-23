@@ -2,3 +2,8 @@ LoginComponent, EntityComponent, HomeComponent
 
 Route appropriate component
 
+
+Create ViewNotFoundComponent in both projects.
+It must be loaded when no matching round found
+
+install json-server and learn commands of json server
