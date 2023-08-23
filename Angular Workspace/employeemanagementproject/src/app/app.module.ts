@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { TrainerComponent } from './trainer/trainer.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { TrainerComponent } from './trainer/trainer.component';
     RegisterComponent,
     LoginComponent,
     DeveloperComponent,
-    TrainerComponent
+    TrainerComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
