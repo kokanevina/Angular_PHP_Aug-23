@@ -1,10 +1,10 @@
-import { FormGroup } from "@angular/forms";
+import { AbstractControl, AbstractControlOptions, FormGroup, ValidatorFn } from "@angular/forms";
 
 export class CustomValidator {
-   passwordMatch(regForm:FormGroup) : null | {}{
+   passwordMatch(regForm:FormGroup) : null | {} {
     
-    let password=regForm.get("customerPassword").value;
-    let cpass=regForm.get("customerConfirmPassword").value
+    let password=regForm.get("customerPassword")?.value;
+    let cpass=regForm.get("customerConfirmPassword")?.value
     if(password==cpass)
         return null;
     else
