@@ -23,6 +23,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { Math1Component } from './math1/math1.component';
 import { Math2Component } from './math2/math2.component';
 import { OperationsComponent } from './operations/operations.component';
+import { MathsService } from './services/maths.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { OperationsComponent } from './operations/operations.component';
     BrowserModule,
     AppRoutingModule, FormsModule,ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MathsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
