@@ -24,7 +24,8 @@ const routes: Routes = [
       { path : 'trainers', component:TrainerComponent}
     ]
   },
-  { path:'', component:HomeComponent }
+  { path:'', component:HomeComponent },
+  {path:'**', component:/*PageNotFoundComponent */}
 
 ];
 

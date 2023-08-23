@@ -1,0 +1,4 @@
+LoginComponent, EntityComponent, HomeComponent
+
+Route appropriate component
+
