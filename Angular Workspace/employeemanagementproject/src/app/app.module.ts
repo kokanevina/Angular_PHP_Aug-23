@@ -17,6 +17,8 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { TrainerComponent } from './trainer/trainer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import { LoginComponent } from './login/login.component';
     IndexPipe,
     OrderByPipe,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DeveloperComponent,
+    TrainerComponent
   ],
   imports: [
     BrowserModule,
