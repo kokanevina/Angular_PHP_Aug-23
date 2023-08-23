@@ -9,10 +9,14 @@
     <label for="num4">Enter 4th number</label>
     <input type="number" [(ngModel)]="numArray[3]" id="num4"><br>
     <button (click)="multiply()">MULTIPLY</button>
-    <button (click)="divide()">DIVIDE</button>
+   
     <div *ngIf="mult>1">
         <b>SUM IS {{mult}}</b>
     </div>
-   
+</div>
+<div>
+    <h3>COUNTER</h3>
+    <p>{{counter2}}</p>
+    <button (click)="increment()">INCREMENT COUNTER</button>
 </div>
 

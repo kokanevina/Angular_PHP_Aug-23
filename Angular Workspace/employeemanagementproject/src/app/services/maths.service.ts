@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MathsService {
-
+  mathCounter=0;
   constructor() {
     console.log("-----in Maths Service");
     
@@ -18,5 +18,11 @@ export class MathsService {
   }
   mathMultiply(...args:number[]):number{
     return args.reduce((acc,ele)=>acc*ele);
+  }
+  incrementCounter():void{
+    this.mathCounter++;
+  }
+  getCounter():number{
+    return this.mathCounter;
   }
 }
