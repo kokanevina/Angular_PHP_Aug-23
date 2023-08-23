@@ -3,14 +3,10 @@
     <b>{{title}}</b> <!-- data binding--> 
     <app-header></app-header> <!-- component directive-->
     <div class="middlesection">
-        <button (click)="hideshow()">SHOW/HIDE</button>
-       <!--  <div *ngIf="flag">
-            <app-home></app-home>
-        </div>
-      -->
-   <!--  <app-employee></app-employee> -->
-   <!-- <app-register></app-register> -->
-   <app-login></app-login>
+      <h3>This section is Dynamic View</h3>
+      <router-outlet> <!-- to display dynamic view (component gets loaded here)-->
+
+      </router-outlet>
     </div>
     <div *ngFor="let y of testArray">
         <app-footer></app-footer>
