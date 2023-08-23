@@ -13,7 +13,7 @@ const routes: Routes = [
   { path:'myhome', component:HomeComponent },
   { path:'login', component:LoginComponent},
   { path:'register', component:RegisterComponent},
-  { path: 'details/:empId', component:EmployeeDetailsComponent}, //empId is registered variable, holds the value of route
+  { path: 'details/:empId/:empName', component:EmployeeDetailsComponent}, //empId is registered variable, holds the value of route
   { path:'employees/showemployees', 
     component:EmployeeComponent,
     children:[

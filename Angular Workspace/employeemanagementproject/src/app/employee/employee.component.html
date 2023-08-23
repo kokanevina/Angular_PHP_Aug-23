@@ -72,7 +72,7 @@
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.edesignation  }}</td>
                 <td>{{employee.ejoiningDate}}</td>
-                <td><a [routerLink]="['/details', employee.eid]">SHOW DETAILS</a></td>
+                <td><a [routerLink]="['/details', employee.eid,employee.ename]">SHOW DETAILS</a></td>
             </tr>
         </tbody>
     </table>
