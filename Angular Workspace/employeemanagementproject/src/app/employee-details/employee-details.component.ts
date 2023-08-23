@@ -8,9 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployeeDetailsComponent {
   details=new Array<EmployeeDetails>();
-  routeParameter=0;
-  empDetails:EmployeeDetails=new EmployeeDetails();
-  name="";
+  routeParameter:string|null="";
+  empDetails:any=new EmployeeDetails();
+  e_id=0;
+  name:string|null="";
   constructor(private routeService:ActivatedRoute){
     this.details.push(new EmployeeDetails(321,34,12, "abc pqr, Ghansoli, Navi mumbai", 7878787878));
     this.details.push(new EmployeeDetails(311,55,20., "aa, bb, Rabale , Navi mumbai",9090909090));
@@ -21,11 +22,14 @@ export class EmployeeDetailsComponent {
   }
   ngOnInit(){
     // data extracting from route 12
-    this.routeParameter=parseInt(this.routeService.snapshot.paramMap.get('empId'));
+    this.routeParameter=this.routeService.snapshot.paramMap.get('empId');
+    if(this.routeParameter!=null){
+      this.e_id=parseInt(this.routeParameter);
+      this.search();
+    }
     this.name=this.routeService.snapshot.paramMap.get('empName');
-    this.search();
   }
   search(){
-    this.empDetails=this.details.find(detailsObj=>detailsObj.id===this.routeParameter);
+    this.empDetails=this.details.find(detailsObj=>detailsObj.id===this.e_id);
   }
 }
