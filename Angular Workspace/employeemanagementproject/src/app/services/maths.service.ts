@@ -5,7 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class MathsService {
 
-  constructor() { }
+  constructor() {
+    console.log("-----in Maths Service");
+    
+   }
 
   mathAdd(...args:number[]):number{
       return args.reduce((acc,ele)=>acc+ele);

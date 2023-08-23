@@ -1,0 +1,14 @@
+<div>
+    <label for="num1">Enter 1st number</label>
+    <input type="number" [(ngModel)]="num1" id="num1"><br>
+    <label for="num2">Enter 2nd number</label>
+    <input type="number" [(ngModel)]="num2" id="num2"><br>
+    <label for="num3">Enter 3rd number</label>
+    <input type="number" [(ngModel)]="num3" id="num3"><br>
+    <label for="num4">Enter 4th number</label>
+    <input type="number" [(ngModel)]="num4" id="num4"><br>
+    <button (click)="add()">ADD</button>
+    <div *ngIf="sum>0">
+        <b>SUM IS {{sum}}</b>
+    </div>
+</div>

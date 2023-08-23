@@ -20,6 +20,8 @@ import { LoginComponent } from './login/login.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { TrainerComponent } from './trainer/trainer.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { Math1Component } from './math1/math1.component';
+import { Math2Component } from './math2/math2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     LoginComponent,
     DeveloperComponent,
     TrainerComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    Math1Component,
+    Math2Component
   ],
   imports: [
     BrowserModule,
