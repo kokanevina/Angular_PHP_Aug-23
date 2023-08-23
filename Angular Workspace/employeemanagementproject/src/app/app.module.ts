@@ -22,6 +22,7 @@ import { TrainerComponent } from './trainer/trainer.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { Math1Component } from './math1/math1.component';
 import { Math2Component } from './math2/math2.component';
+import { OperationsComponent } from './operations/operations.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { Math2Component } from './math2/math2.component';
     TrainerComponent,
     EmployeeDetailsComponent,
     Math1Component,
-    Math2Component
+    Math2Component,
+    OperationsComponent
   ],
   imports: [
     BrowserModule,
