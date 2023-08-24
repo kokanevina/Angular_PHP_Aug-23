@@ -28,15 +28,15 @@ export class EmployeeComponent {
       ejoiningDate: new FormControl()
     });
 
-    crudService.getAllEmployees().subscribe({
+   this.getEmployees();
+ 
+  }
+  getEmployees(){
+    this.crudService.getAllEmployees().subscribe({
       next:(data)=>this.employees=data as Employee[],
       error:(error)=>console.log(error)
     }
   );
- 
-  }
-  getEmployees(){
-    // here u will get the data from service
   }
   cname="";
   receiver(ev:string){
@@ -53,8 +53,11 @@ export class EmployeeComponent {
 
   collectEmp():void{
     this.employee=this.empForm.value;
-    console.log(this.employee);
-
+    console.log(this.employee);  // we will pass this data to backend
+    this.crudService.addEmployee(this.employee).subscribe({
+      next:(success)=>this.getEmployees(),
+      error:(err)=>console.log(err)
+    });
   }
 }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Employee } from '../classes/employee';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,5 +12,9 @@ export class EmployeeCrudService {
   getAllEmployees(){
     //console.log("in getAllEmployees");
     return this.httpService.get(this.serverPath);
+  }
+
+  addEmployee(employee:Employee){
+      return this.httpService.post(this.serverPath,employee);
   }
 }
