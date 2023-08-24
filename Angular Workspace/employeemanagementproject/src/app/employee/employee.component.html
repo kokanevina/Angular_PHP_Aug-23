@@ -62,7 +62,7 @@
                 <th class="bg-info" (click)="sendKey('esalary')"> SALARY</th>
                 <th class="bg-primary" (click)="sendKey('edesignation')">DESIGNATION</th>
                 <th class="bg-warning" (click)="sendKey('ejoiningDate')">JOINING DATE</th>
-                <th class="bg-success" >ACTION</th>
+                <th class="bg-success" colspan="2">ACTION</th>
             </tr>
         </thead>
         <tbody>
@@ -73,6 +73,7 @@
                 <td>{{employee.edesignation  }}</td>
                 <td>{{employee.ejoiningDate | date : 'full'}}</td>
                 <td><a [routerLink]="['/details', employee.eid,employee.ename]">SHOW DETAILS</a></td>
+                <td><button class="btn btn-danger" (click)="delete(employee.id)">DELETE</button></td> <!-- use boostrap delete icon-->
             </tr>
         </tbody>
     </table>

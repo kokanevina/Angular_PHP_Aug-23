@@ -17,4 +17,7 @@ export class EmployeeCrudService {
   addEmployee(employee:Employee){
       return this.httpService.post(this.serverPath,employee);
   }
+  deleteEmployee(employeeId:number){
+    return this.httpService.delete(this.serverPath+"/"+employeeId);
+  }
 }

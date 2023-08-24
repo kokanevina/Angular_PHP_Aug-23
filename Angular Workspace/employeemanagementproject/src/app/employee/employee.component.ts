@@ -38,6 +38,21 @@ export class EmployeeComponent {
     }
   );
   }
+  collectEmp():void{
+    this.employee=this.empForm.value;
+    console.log(this.employee);  // we will pass this data to backend
+    this.crudService.addEmployee(this.employee).subscribe({
+      next:(success)=>this.getEmployees(),
+      error:(err)=>console.log(err)
+    });
+  }
+  delete(employeeId:number){
+    this.crudService.deleteEmployee(employeeId).subscribe({
+      next:(success)=>this.getEmployees(),
+      error:(err)=>console.log(err)
+    });
+  }
+
   cname="";
   receiver(ev:string){
    // console.log("-----receiver function called----");
@@ -51,13 +66,6 @@ export class EmployeeComponent {
     this.orderKey=key;
   }
 
-  collectEmp():void{
-    this.employee=this.empForm.value;
-    console.log(this.employee);  // we will pass this data to backend
-    this.crudService.addEmployee(this.employee).subscribe({
-      next:(success)=>this.getEmployees(),
-      error:(err)=>console.log(err)
-    });
-  }
+  
 }
 
