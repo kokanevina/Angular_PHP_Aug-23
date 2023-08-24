@@ -108,7 +108,7 @@
         <div class="col-md-3 bg-info border border-2" *ngFor="let emp of employees">
             <app-employee-card [employee]="emp" (emitter)="receiver($event)"></app-employee-card>
             <button class="btn btn-danger" (click)="delete(emp.id)">DELETE</button>
-             <button class="btn btn-primary" (click)="search(employee.id)">EDIT</button> <!-- component gets repeated till the end of the array-->
+             <button class="btn btn-primary" (click)="search(emp.id)">EDIT</button> <!-- component gets repeated till the end of the array-->
         </div>
     </div>
 </section>
@@ -122,7 +122,7 @@
                 <div id="input-column" class="col-md-6">
                     <div id="input-box" class="col-md-12">
                         <form id="employe-form" class="form" (submit)="collectEmp()"  method="post" [formGroup]="empForm" >
-                            <h3 class="text-center text-info">EMPLOYEE INPUT FORM</h3>
+                            <h3 class="text-center text-info">EMPLOYEE INPUT/UPDATE FORM</h3>
                             <div class="form-group">
                                 <label for="id" class="text-info">ID:</label><br>
                                 <input type="number"  name="id" id="id" class="form-control" formControlName="id" [readonly]="updateFlag" >

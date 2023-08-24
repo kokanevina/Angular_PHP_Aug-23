@@ -47,24 +47,25 @@ export class EmployeeComponent {
   }
   add(){
     this.crudService.addEmployee(this.employee).subscribe({
-      next:(success)=>this.getEmployees(),
+      next:(success)=>{this.getEmployees();window.alert("Employee Added.......");},
       error:(err)=>console.log(err)
     });
   }
-update(){
-  this.crudService.updateEmployee(this.employee).subscribe({
-    next:(success)=>this.getEmployees(),
-    error:(err)=>console.log(err)
-  });
-this.updateFlag=false;
-}
-
-
-  delete(employeeId:number){
-    this.crudService.deleteEmployee(employeeId).subscribe({
-      next:(success)=>this.getEmployees(),
+  update(){
+    this.crudService.updateEmployee(this.employee).subscribe({
+      next:(success)=>{this.getEmployees(); window.alert("Employee Updated.......");},
       error:(err)=>console.log(err)
     });
+    this.updateFlag=false;
+  }
+  delete(employeeId:number){
+   let b= window.confirm("Do you really want to delete?");
+    if(b){
+      this.crudService.deleteEmployee(employeeId).subscribe({
+        next:(success)=>this.getEmployees(),
+        error:(err)=>console.log(err)
+      });
+    }
   }
   search(employeeId:number){
       this.crudService.getEmployeeId(employeeId).subscribe({
