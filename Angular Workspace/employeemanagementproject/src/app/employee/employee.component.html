@@ -5,7 +5,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees">
-                <td>{{employee.eid}}</td>
+                <td>{{employee.id}}</td>
                 <td>{{employee.ename }}</td>
                 <td>{{employee.ename | index : 'p' }}</td>
                 <td>{{employee.ename | uppercase }}</td> 
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees">
-                <td>{{employee.eid}}</td>
+                <td>{{employee.id}}</td>
                 <td>{{employee.ejoiningDate}}</td>
                 <td>{{employee.ejoiningDate | date}}</td>
                 <td>{{employee.ejoiningDate | date : "mediumDate"}}</td> 
@@ -57,7 +57,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th class="bg-success" (click)="sendKey('eid')">ID</th>
+                <th class="bg-success" (click)="sendKey('id')">ID</th>
                 <th class="bg-danger" (click)="sendKey('ename')">NAME</th>
                 <th class="bg-info" (click)="sendKey('esalary')"> SALARY</th>
                 <th class="bg-primary" (click)="sendKey('edesignation')">DESIGNATION</th>
@@ -67,11 +67,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees | orderby : orderKey">
-                <td>{{employee.eid}}</td>
+                <td>{{employee.id}}</td>
                 <td>{{employee.ename }}</td>
                 <td>{{employee.esalary}}</td>
                 <td>{{employee.edesignation  }}</td>
-                <td>{{employee.ejoiningDate}}</td>
+                <td>{{employee.ejoiningDate | date : 'full'}}</td>
                 <td><a [routerLink]="['/details', employee.eid,employee.ename]">SHOW DETAILS</a></td>
             </tr>
         </tbody>

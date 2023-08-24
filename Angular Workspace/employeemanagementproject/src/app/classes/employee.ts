@@ -1,24 +1,24 @@
 export class Employee {
-    private id:number;
+    private employeeId:number;
     private employeeName:string;
     private employeeSalary:number;
     private employeeDesignation:string;
     private employeeJoiningDate:Date;
     private employeeImage:string
-    constructor(id=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date(), employeeImage="")
+    constructor(employeeId=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date(), employeeImage="")
     {
-        this.id=id;
+        this.employeeId=employeeId;
         this.employeeName=employeeName;
         this.employeeSalary=employeeSalary
         this.employeeDesignation=employeeDesignation;
         this.employeeJoiningDate=employeeJoiningDate;
         this.employeeImage=employeeImage;
     }
-    get eid(){
-        return this.id;
+    get id(){
+        return this.employeeId;
     }
-    set eid(id:number){
-        this.id=id;
+    set id(employeeId:number){
+        this.employeeId=employeeId;
     }
     get ename(){
         return this.employeeName;

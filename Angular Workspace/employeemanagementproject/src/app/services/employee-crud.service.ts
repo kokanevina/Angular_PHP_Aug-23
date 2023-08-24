@@ -7,15 +7,10 @@ export class EmployeeCrudService {
 
   serverPath="http://localhost:3000/employees";
   constructor(private httpService:HttpClient ) {
-
    }
-
   getAllEmployees(){
-      this.httpService.get(this.serverPath).subscribe({
-          next:(data)=>console.log(data),
-          error:(error)=>console.log(error)
-        }
-      );
-
+    console.log("in getAllEmployees");
+    
+      return this.httpService.get(this.serverPath);
   }
 }
