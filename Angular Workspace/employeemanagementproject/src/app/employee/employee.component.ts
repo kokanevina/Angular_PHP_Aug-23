@@ -9,6 +9,7 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 })
 export class EmployeeComponent {
   openFlag=false;
+  updateFlag=false;
   employees=new Array<Employee>();
   empForm:FormGroup;
   employee=new Employee();
@@ -27,7 +28,8 @@ export class EmployeeComponent {
       edesignation: new FormControl(),
       ejoiningDate: new FormControl()
     });
-
+    
+    
    this.getEmployees();
  
   }
@@ -40,6 +42,8 @@ export class EmployeeComponent {
   }
   collectEmp():void{
     this.employee=this.empForm.value;
+    console.log(this.empForm);
+    
     console.log(this.employee);  // we will pass this data to backend
     this.crudService.addEmployee(this.employee).subscribe({
       next:(success)=>this.getEmployees(),
@@ -52,11 +56,12 @@ export class EmployeeComponent {
       error:(err)=>console.log(err)
     });
   }
-  update(employeeId:number){
+  search(employeeId:number){
       this.crudService.getEmployeeId(employeeId).subscribe({
-        next:(data)=>console.log(data),
+        next:(data)=>{this.employee = data as Employee; this.updateFlag=true},
         error:(err)=>console.log(err)
       });
+      this.openFlag=true;
   }
 
   cname="";

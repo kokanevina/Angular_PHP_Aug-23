@@ -74,7 +74,7 @@
                 <td>{{employee.ejoiningDate | date : 'full'}}</td>
                 <td><a [routerLink]="['/details', employee.eid,employee.ename]">SHOW DETAILS</a></td>
                 <td><button class="btn btn-danger" (click)="delete(employee.id)">DELETE</button></td> 
-                <td><button class="btn btn-info" (click)="update(employee.id)">UPDATE</button></td><!-- use boostrap delete icon-->
+                <td><button class="btn btn-info" (click)="search(employee.id)">EDIT</button></td><!-- use boostrap delete icon-->
             </tr>
         </tbody>
     </table>
@@ -124,27 +124,27 @@
                             <h3 class="text-center text-info">EMPLOYEE INPUT FORM</h3>
                             <div class="form-group">
                                 <label for="id" class="text-info">ID:</label><br>
-                                <input type="number" name="id" id="id" class="form-control" formControlName="id" >
+                                <input type="number" [value]="employee.id" name="id" id="id" class="form-control" formControlName="id" [readonly]="updateFlag" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="ename" class="text-info">Name:</label><br>
-                                <input type="text" name="ename" id="ename" class="form-control"  formControlName="ename" >
+                                <input type="text" name="ename" [value]="employee.ename"  id="ename" class="form-control"  formControlName="ename" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="esalary" class="text-info">SALARY:</label><br>
-                                <input type="number" name="esalary" id="esalary" class="form-control"  formControlName="esalary" >
+                                <input type="number" name="esalary" [value]="employee.esalary"  id="esalary" class="form-control"  formControlName="esalary" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="edesignation" class="text-info">DESIGNATION:</label><br>
-                                <input type="text" name="edesignation" id="edesignation" class="form-control"  formControlName="edesignation" >
+                                <input type="text" name="edesignation" [value]="employee.edesignation"  id="edesignation" class="form-control"  formControlName="edesignation" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="ejoiningDate" class="text-info">JOINING DATE:</label><br>
-                                <input type="date" name="ejoiningDate" id="ejoiningDate" class="form-control"  formControlName="ejoiningDate" >
+                                <input type="date" name="ejoiningDate" [value]="employee.ejoiningDate"  id="ejoiningDate" class="form-control"  formControlName="ejoiningDate" >
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="ADD">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="UPDATE">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="ADD" *ngIf="!updateFlag">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="UPDATE" *ngIf="updateFlag">
                                 <input type="reset" name="reset" class="btn btn-info btn-md" value="RESET">
                             </div>
                         </form>
