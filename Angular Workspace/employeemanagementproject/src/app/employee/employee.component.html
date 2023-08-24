@@ -117,27 +117,27 @@
             <div id="input-row" class="row justify-content-center align-items-center">
                 <div id="input-column" class="col-md-6">
                     <div id="input-box" class="col-md-12">
-                        <form id="employe-form" class="form"  method="post" >
+                        <form id="employe-form" class="form" (submit)="collectEmp()"  method="post" [formGroup]="empForm" >
                             <h3 class="text-center text-info">EMPLOYEE INPUT FORM</h3>
                             <div class="form-group">
                                 <label for="id" class="text-info">ID:</label><br>
-                                <input type="number" name="id" id="id" class="form-control" >
+                                <input type="number" name="id" id="id" class="form-control" formControlName="id" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="ename" class="text-info">Name:</label><br>
-                                <input type="text" name="ename" id="ename" class="form-control" >
+                                <input type="text" name="ename" id="ename" class="form-control"  formControlName="ename" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="esalary" class="text-info">SALARY:</label><br>
-                                <input type="number" name="esalary" id="esalary" class="form-control" >
+                                <input type="number" name="esalary" id="esalary" class="form-control"  formControlName="esalary" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="edesignation" class="text-info">DESIGNATION:</label><br>
-                                <input type="text" name="edesignation" id="edesignation" class="form-control" >
+                                <input type="text" name="edesignation" id="edesignation" class="form-control"  formControlName="edesignation" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="ejoiningDate" class="text-info">JOINING DATE:</label><br>
-                                <input type="date" name="ejoiningDate" id="ejoiningDate" class="form-control" >
+                                <input type="date" name="ejoiningDate" id="ejoiningDate" class="form-control"  formControlName="ejoiningDate" >
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
