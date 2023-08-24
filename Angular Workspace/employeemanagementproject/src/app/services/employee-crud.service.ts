@@ -11,13 +11,15 @@ export class EmployeeCrudService {
    }
   getAllEmployees(){
     //console.log("in getAllEmployees");
-    return this.httpService.get(this.serverPath);
+    return this.httpService.get(this.serverPath); // all records
   }
-
   addEmployee(employee:Employee){
       return this.httpService.post(this.serverPath,employee);
   }
   deleteEmployee(employeeId:number){
     return this.httpService.delete(this.serverPath+"/"+employeeId);
+  }
+  getEmployeeId(employeeId:number){
+   return this.httpService.get(this.serverPath+"/"+employeeId); // single record
   }
 }

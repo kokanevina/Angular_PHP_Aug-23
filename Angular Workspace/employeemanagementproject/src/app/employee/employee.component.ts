@@ -52,6 +52,12 @@ export class EmployeeComponent {
       error:(err)=>console.log(err)
     });
   }
+  update(employeeId:number){
+      this.crudService.getEmployeeId(employeeId).subscribe({
+        next:(data)=>console.log(data),
+        error:(err)=>console.log(err)
+      });
+  }
 
   cname="";
   receiver(ev:string){
