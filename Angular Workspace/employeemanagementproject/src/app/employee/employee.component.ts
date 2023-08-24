@@ -26,7 +26,8 @@ export class EmployeeComponent {
       ename:new FormControl(this.employee.ename),
       esalary: new FormControl(this.employee.esalary),
       edesignation: new FormControl(this.employee.edesignation),
-      ejoiningDate: new FormControl(this.employee.ejoiningDate)
+      ejoiningDate: new FormControl(this.employee.ejoiningDate),
+      eimage: new FormControl(this.employee.eimage)
     });
    this.getEmployees();
   }
@@ -94,7 +95,10 @@ export class EmployeeComponent {
   sendKey(key:string){
     this.orderKey=key;
   }
-
-  
+  getFile(event:any){
+      console.log(event.target.files[0]);
+      this.employee.eimage=event.target.files[0];
+      console.log(this.employee.eimage);
+  }
 }
 

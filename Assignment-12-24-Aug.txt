@@ -1,0 +1,4 @@
+Implement CRUD operation of your entity in mini project (without image)
+Make proper bootstrap design
+in Card use delete icon and update icon. Use bootstrap tooltips to show tips when u hover on
+delete icon and update icon
