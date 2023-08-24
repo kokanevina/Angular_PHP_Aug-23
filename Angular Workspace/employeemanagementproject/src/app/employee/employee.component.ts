@@ -22,11 +22,11 @@ export class EmployeeComponent {
     this.employees.push(new Employee(134,"Suman Puranik",1356000.7,"Python Developer",new Date('13 Aug 2015'),"assets/Images/e434.jpg")); */
     
     this.empForm=new FormGroup({
-      id:new FormControl(),
-      ename:new FormControl(),
-      esalary: new FormControl(),
-      edesignation: new FormControl(),
-      ejoiningDate: new FormControl()
+      id:new FormControl(this.employee.id),
+      ename:new FormControl(this.employee.ename),
+      esalary: new FormControl(this.employee.esalary),
+      edesignation: new FormControl(this.employee.edesignation),
+      ejoiningDate: new FormControl(this.employee.ejoiningDate)
     });
     
     
@@ -42,13 +42,21 @@ export class EmployeeComponent {
   }
   collectEmp():void{
     this.employee=this.empForm.value;
-    console.log(this.empForm);
-    
     console.log(this.employee);  // we will pass this data to backend
+
+    if(this.updateFlag){
+        this.crudService.updateEmployee(this.employee).subscribe({
+          next:(success)=>this.getEmployees(),
+          error:(err)=>console.log(err)
+        });
+      this.updateFlag=false;
+    }
+    else{
     this.crudService.addEmployee(this.employee).subscribe({
       next:(success)=>this.getEmployees(),
       error:(err)=>console.log(err)
     });
+  }
   }
   delete(employeeId:number){
     this.crudService.deleteEmployee(employeeId).subscribe({
@@ -58,7 +66,14 @@ export class EmployeeComponent {
   }
   search(employeeId:number){
       this.crudService.getEmployeeId(employeeId).subscribe({
-        next:(data)=>{this.employee = data as Employee; this.updateFlag=true},
+        next:(data)=>{this.employee = data as Employee; 
+          this.empForm.controls['id'].setValue(this.employee.id); 
+          this.empForm.controls['ename'].setValue(this.employee.ename); 
+          this.empForm.controls['esalary'].setValue(this.employee.esalary); 
+          this.empForm.controls['edesignation'].setValue(this.employee.edesignation); 
+          this.empForm.controls['ejoiningDate'].setValue(this.employee.ejoiningDate); 
+          this.updateFlag=true;
+        },
         error:(err)=>console.log(err)
       });
       this.openFlag=true;
