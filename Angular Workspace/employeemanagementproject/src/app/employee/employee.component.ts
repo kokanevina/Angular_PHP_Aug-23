@@ -28,36 +28,38 @@ export class EmployeeComponent {
       edesignation: new FormControl(this.employee.edesignation),
       ejoiningDate: new FormControl(this.employee.ejoiningDate)
     });
-    
-    
    this.getEmployees();
- 
   }
   getEmployees(){
-    this.crudService.getAllEmployees().subscribe({
-      next:(data)=>this.employees=data as Employee[],
-      error:(error)=>console.log(error)
-    }
-  );
+      this.crudService.getAllEmployees().subscribe({
+        next:(data)=>this.employees=data as Employee[],
+        error:(error)=>console.log(error)
+      }
+    );
   }
   collectEmp():void{
     this.employee=this.empForm.value;
-    console.log(this.employee);  // we will pass this data to backend
-
-    if(this.updateFlag){
-        this.crudService.updateEmployee(this.employee).subscribe({
-          next:(success)=>this.getEmployees(),
-          error:(err)=>console.log(err)
-        });
-      this.updateFlag=false;
-    }
-    else{
+    //console.log(this.employee);  // we will pass this data to backend
+    if(this.updateFlag)
+      this.update();
+    else
+      this.add();
+  }
+  add(){
     this.crudService.addEmployee(this.employee).subscribe({
       next:(success)=>this.getEmployees(),
       error:(err)=>console.log(err)
     });
   }
-  }
+update(){
+  this.crudService.updateEmployee(this.employee).subscribe({
+    next:(success)=>this.getEmployees(),
+    error:(err)=>console.log(err)
+  });
+this.updateFlag=false;
+}
+
+
   delete(employeeId:number){
     this.crudService.deleteEmployee(employeeId).subscribe({
       next:(success)=>this.getEmployees(),
