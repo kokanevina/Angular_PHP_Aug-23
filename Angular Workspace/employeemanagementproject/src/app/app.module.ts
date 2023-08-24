@@ -24,6 +24,7 @@ import { Math1Component } from './math1/math1.component';
 import { Math2Component } from './math2/math2.component';
 import { OperationsComponent } from './operations/operations.component';
 import { MathsService } from './services/maths.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,7 @@ import { MathsService } from './services/maths.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule,ReactiveFormsModule
+    AppRoutingModule, FormsModule,ReactiveFormsModule, HttpClientModule
   ],
   providers: [MathsService],
   bootstrap: [AppComponent]
