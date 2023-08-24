@@ -11,7 +11,7 @@ export class HeaderComponent {
    constructor(){
     setTimeout(() => {
       this.projectTitle="EMPLOYEE CRUD MODEL"
-      console.log(this.projectTitle);   
+     // console.log(this.projectTitle);   
     }, 6000);
     
    }

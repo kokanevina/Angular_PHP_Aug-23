@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class MathsService {
   mathCounter=0;
   constructor() {
-    console.log("-----in Maths Service");
+   // console.log("-----in Maths Service");
     
    }
 

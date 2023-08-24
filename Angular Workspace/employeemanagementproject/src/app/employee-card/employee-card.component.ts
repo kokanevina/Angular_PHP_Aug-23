@@ -20,14 +20,14 @@ export class EmployeeCardComponent {
   constructor(){
     setTimeout(()=>{
       this.companyName="Sqaud Infotech Ltd."
-      console.log(this.companyName);
+     // console.log(this.companyName);
       this.emitter.emit(this.companyName); // event must be emitted if value is getting changed at child side
     },5000);
  
   }
   // component lifecycle method  (constructors dont emit events)
   ngOnInit(){
-    console.log("EmployeeCard lifecycle method");
+   // console.log("EmployeeCard lifecycle method");
     this.emitter.emit(this.companyName);  //3.
   }
 }

@@ -60,7 +60,7 @@ export class HomeComponent {
   }
 
   changeColor(){
-    console.log("in function");
+  //  console.log("in function");
       this.colorObj=this.colorArray[this.colorarindex];
       this.bcolor=this.colorObj.backgroundColor;
       this.fcolor=this.colorObj.color;
@@ -70,11 +70,11 @@ export class HomeComponent {
   }
 
   test(eventObj:any):void{
-   console.log(this.empName);
-   console.log(eventObj);
+  // console.log(this.empName);
+   //console.log(eventObj);
   }
   test2():void{
-    console.log("Event Generated");
+   // console.log("Event Generated");
     
   }
   add():void{
@@ -86,9 +86,9 @@ export class HomeComponent {
     
   }
   add2(n1:any,n2:any){
-    console.log(n1);
-    console.log(n2);
-    console.log(typeof n1);
+  //  console.log(n1);
+   // console.log(n2);
+   // console.log(typeof n1);
     this.addition2=parseFloat(n1)+parseFloat(n2);
     
   }

@@ -9,8 +9,7 @@ export class EmployeeCrudService {
   constructor(private httpService:HttpClient ) {
    }
   getAllEmployees(){
-    console.log("in getAllEmployees");
-    
-      return this.httpService.get(this.serverPath);
+    //console.log("in getAllEmployees");
+    return this.httpService.get(this.serverPath);
   }
 }

@@ -7,6 +7,7 @@ import { EmployeeCrudService } from '../services/employee-crud.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
+  openFlag=false;
   employees=new Array<Employee>();
   constructor(private crudService:EmployeeCrudService ){
    /*  this.employees.push(new Employee(321,"Kiran rana Patil",67000.64578,"php Developer",new Date('12 Jun 2010'), "assets/Images/e321.jpg"));
@@ -28,8 +29,8 @@ export class EmployeeComponent {
   }
   cname="";
   receiver(ev:string){
-    console.log("-----receiver function called----");
-    console.log(ev);
+   // console.log("-----receiver function called----");
+  //  console.log(ev);
     this.cname=ev;
   }
   today=new Date();
