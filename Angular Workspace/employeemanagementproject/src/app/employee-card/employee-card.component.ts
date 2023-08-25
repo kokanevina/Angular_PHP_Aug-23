@@ -7,25 +7,20 @@ import { Employee } from '../classes/employee';
   styleUrls: ['./employee-card.component.css']
 })
 export class EmployeeCardComponent implements OnInit, OnDestroy{
-  @Input() // input coming from parent 
+  @Input() 
   employee:Employee=new Employee();
-  companyName="Seed Infotech Ltd.";   //1. declare the data to give to parent
-  @Output()  // output going to parent
-  emitter=new EventEmitter<string>();   //2.
-  // emitting event : lifecycle methods, function
+  companyName="Seed Infotech Ltd.";  
+  @Output()  
+  emitter=new EventEmitter<string>();
   constructor(){
     setTimeout(()=>{
       this.companyName="Sqaud Infotech Ltd."
-     // console.log(this.companyName);
-      this.emitter.emit(this.companyName); // event must be emitted if value is getting changed at child side
+      this.emitter.emit(this.companyName); 
     },5000);
- 
   }
-  
-  // component lifecycle method  (constructors dont emit events)
   ngOnInit(){
     console.log("----------EmployeeCard init lifecycle method");
-    this.emitter.emit(this.companyName);  //3.
+    this.emitter.emit(this.companyName);  // component lifecycle method  (constructors dont emit events)
   }
   ngOnDestroy(): void {
     console.log("----------EmployeeCard destroy lifecycle method");
