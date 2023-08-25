@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit,OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit,OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { Employee } from '../classes/employee';
 
 @Component({
@@ -6,7 +6,7 @@ import { Employee } from '../classes/employee';
   templateUrl: './employee-card.component.html',
   styleUrls: ['./employee-card.component.css']
 })
-export class EmployeeCardComponent implements OnInit, OnDestroy{
+export class EmployeeCardComponent implements OnInit, OnDestroy, OnChanges{
   @Input() 
   employee:Employee=new Employee();
   companyName="Seed Infotech Ltd.";  
@@ -24,5 +24,9 @@ export class EmployeeCardComponent implements OnInit, OnDestroy{
   }
   ngOnDestroy(): void {
     console.log("----------EmployeeCard destroy lifecycle method");
+  }
+  ngOnChanges(changes:SimpleChanges){
+    console.log("-------EmployeeCard change lifecycle method");
+    console.log(changes);  
   }
 }
