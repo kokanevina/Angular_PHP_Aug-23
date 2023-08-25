@@ -13,6 +13,7 @@ export class EmployeeComponent {
   employees=new Array<Employee>();
   empForm:FormGroup;
   employee=new Employee();
+  imageFile:File;
   constructor(private crudService:EmployeeCrudService ){
    /*  this.employees.push(new Employee(321,"Kiran rana Patil",67000.64578,"php Developer",new Date('12 Jun 2010'), "assets/Images/e321.jpg"));
     this.employees.push(new Employee(311,"sudhakar puri",67000,"python Developer",new Date('12 Jun 2010'), "assets/Images/e321.jpg"));
@@ -26,8 +27,7 @@ export class EmployeeComponent {
       ename:new FormControl(this.employee.ename),
       esalary: new FormControl(this.employee.esalary),
       edesignation: new FormControl(this.employee.edesignation),
-      ejoiningDate: new FormControl(this.employee.ejoiningDate),
-      eimage: new FormControl(this.employee.eimage)
+      ejoiningDate: new FormControl(this.employee.ejoiningDate)
     });
    this.getEmployees();
   }
@@ -38,9 +38,9 @@ export class EmployeeComponent {
       }
     );
   }
+ 
   collectEmp():void{
     this.employee=this.empForm.value;
-    //console.log(this.employee);  // we will pass this data to backend
     if(this.updateFlag)
       this.update();
     else
@@ -82,7 +82,6 @@ export class EmployeeComponent {
       });
       this.openFlag=true;
   }
-
   cname="";
   receiver(ev:string){
    // console.log("-----receiver function called----");
@@ -90,15 +89,16 @@ export class EmployeeComponent {
     this.cname=ev;
   }
   today=new Date();
-
   orderKey="eid";
   sendKey(key:string){
     this.orderKey=key;
   }
-  getFile(event:any){
-      console.log(event.target.files[0]);
-      this.employee.eimage=event.target.files[0];
-      console.log(this.employee.eimage);
-  }
+
+  /* getFile(event:any){
+    const file: File=event.target.files[0];
+    this.imageFile=file;
+    this.empForm.controls['eimage'].setValue(this.imageFile); 
+    console.log(this.empForm.value.eimage);
+  } */
 }
 

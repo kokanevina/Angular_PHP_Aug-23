@@ -25,6 +25,12 @@ import { Math2Component } from './math2/math2.component';
 import { OperationsComponent } from './operations/operations.component';
 import { MathsService } from './services/maths.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +55,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule,ReactiveFormsModule, HttpClientModule
+    AppRoutingModule, FormsModule,ReactiveFormsModule, HttpClientModule, 
+    BrowserAnimationsModule, MatSlideToggleModule,
+    MatButtonModule,MatDividerModule,MatIconModule,
+    MatTooltipModule
   ],
   providers: [MathsService],
   bootstrap: [AppComponent]

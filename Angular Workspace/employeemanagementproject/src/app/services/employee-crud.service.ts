@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Employee } from '../classes/employee';
 @Injectable({
   providedIn: 'root'
@@ -25,4 +25,5 @@ export class EmployeeCrudService {
   updateEmployee(employee:Employee){
     return this.httpService.put(this.serverPath+"/"+employee.id,employee);
   }
+
 }

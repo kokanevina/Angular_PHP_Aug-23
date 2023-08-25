@@ -73,18 +73,28 @@
                 <td>{{employee.edesignation  }}</td>
                 <td>{{employee.ejoiningDate | date : 'full'}}</td>
                 <td><a [routerLink]="['/details', employee.eid,employee.ename]">SHOW DETAILS</a></td>
-                <td><button class="btn btn-danger" (click)="delete(employee.id)">DELETE</button></td> 
-                <td><button class="btn btn-info" (click)="search(employee.id)">EDIT</button></td><!-- use boostrap delete icon-->
+                <td> <button mat-mini-fab color="warn" #tooltip="matTooltip"
+                    matTooltip="delete entity"  (click)="delete(employee.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                </td>
+                <td>
+                    <button mat-mini-fab color="primary" #tooltip="matTooltip"
+                    matTooltip="edit entity" (click)="search(employee.id)">
+                        <mat-icon>create</mat-icon>
+                    </button>
+                </td>
+                
             </tr>
         </tbody>
     </table>
 </section>
 <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent2">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" routerLink="developers" routerLinkActive="bg-secondary">DEVELOPERS</a>
@@ -96,24 +106,30 @@
       </div>
     </div>
   </nav>
-<hr>
+  <mat-divider></mat-divider>
 <h4>Dyanamic view in Employee Component</h4>
 <router-outlet>
 
 </router-outlet>
-<hr>
+<mat-divider></mat-divider>
 <section>
     <h4>{{cname}}</h4>
     <div class="row">
         <div class="col-md-3 bg-info border border-2" *ngFor="let emp of employees">
             <app-employee-card [employee]="emp" (emitter)="receiver($event)"></app-employee-card>
-            <button class="btn btn-danger" (click)="delete(emp.id)">DELETE</button>
-             <button class="btn btn-primary" (click)="search(emp.id)">EDIT</button> <!-- component gets repeated till the end of the array-->
+            <button mat-fab color="warn" (click)="delete(emp.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            <button mat-fab color="primary" (click)="search(emp.id)">
+                <mat-icon>create</mat-icon>
+            </button>
+              
+             <!-- component gets repeated till the end of the array-->
         </div>
     </div>
 </section>
-<hr>
-<button (click)="openFlag=!openFlag" class="btn btn-success">ADD / UPDATE EMPLOYEE FORM</button>
+<mat-divider></mat-divider>
+<button (click)="openFlag=!openFlag" mat-raised-button color="accent">ADD / UPDATE EMPLOYEE FORM</button>
 <div *ngIf="openFlag">
     <div id="empinput">
         <!-- <h3 class="text-center text-white pt-5">Login form</h3> -->
@@ -121,7 +137,7 @@
             <div id="input-row" class="row justify-content-center align-items-center">
                 <div id="input-column" class="col-md-6">
                     <div id="input-box" class="col-md-12">
-                        <form id="employe-form" class="form" (submit)="collectEmp()"  method="post" [formGroup]="empForm" >
+                        <form enctype="multipart/form-data" id="employe-form" class="form" (submit)="collectEmp()"  method="post" [formGroup]="empForm" >
                             <h3 class="text-center text-info">EMPLOYEE INPUT/UPDATE FORM</h3>
                             <div class="form-group">
                                 <label for="id" class="text-info">ID:</label><br>
@@ -144,8 +160,8 @@
                                 <input type="date" name="ejoiningDate"   id="ejoiningDate" class="form-control"  formControlName="ejoiningDate" >
                             </div>
                             <div class="form-group mb-3">
-                                <label for="eimage" class="text-info">Upload your Photo:</label><br>
-                                <input type="file" name="eimage"   id="eimage" class="form-control"  formControlName="eimage" (change)="getFile($event)">
+                                <label for="image" class="text-info">Upload your Photo:</label><br>
+                                <input type="file" id="image" class="form-control">
                             </div>
 
                             <div class="form-group">

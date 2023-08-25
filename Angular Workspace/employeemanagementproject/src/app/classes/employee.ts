@@ -4,8 +4,8 @@ export class Employee {
     private employeeSalary:number;
     private employeeDesignation:string;
     private employeeJoiningDate:Date;
-    private employeeImage:File
-    constructor(employeeId=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date(), employeeImage=new File([],""))
+    private employeeImage:string
+    constructor(employeeId=0,employeeName="",employeeSalary=0,employeeDesignation="", employeeJoiningDate=new Date(), employeeImage="")
     {
         this.employeeId=employeeId;
         this.employeeName=employeeName;
@@ -47,7 +47,7 @@ export class Employee {
     get eimage(){
         return this.employeeImage;
     }
-    set eimage(employeeImage:File){
+    set eimage(employeeImage:string){
         this.employeeImage=employeeImage;
     }
 
