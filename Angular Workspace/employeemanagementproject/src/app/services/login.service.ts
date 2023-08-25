@@ -9,11 +9,9 @@ export class LoginService {
   adminPassword="admin321";
   constructor() { }
 
-  checkLogin(username:string,password:string):void{
+  checkLogin(username:string,password:string):boolean{
     if(username===this.adminUser && password=== this.adminPassword)
-    {
       this.loginFlag=true;
-      window.alert("You are logged in successfully...");
-    }
+    return this.loginFlag;
   }
 }
